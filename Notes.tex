@@ -1,0 +1,92 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% package setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{enumitem}
+\usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref}
+\usepackage[all]{xy}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+
+\raggedbottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% operators and symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% operators
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\Proj}{\mathrm{Proj}}
+\newcommand{\rk}{\mathrm{rk}}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Frob}{\mathrm{Frob}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\Ind}{\mathrm{Ind}}
+
+% mathcal
+\newcommand{\cO}{\mathcal{O}}
+
+% mathbb
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\adele}{\mathbb{A}}
+
+% mathfra
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fm}{\mathfrak{m}}
+
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
+
+\linespread{1.5}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{algo}[thm]{Algorithm}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+\newtheorem{fact}[thm]{Fact}
+
+
+\title{Local Langlands for $\mathrm{GL}_2$}
+\author{Yiannis Fam}
+
+\begin{document}
+	\maketitle
+	\pagenumbering{arabic}
+
+\input{Section4}
+
+\input{modforms.tex}
+
+\input{principal_series}
+
+
+
+\end{document}

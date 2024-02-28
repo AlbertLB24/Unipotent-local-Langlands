@@ -1,0 +1,189 @@
+\section{Hecke Algebras}
+
+If $G$ is a finite group, representations of $G$ are the same as $\CC[G]$-modules. We want to extend this notion to smooth representations of locally profinite groups where we need to correctly interpret the group algebra.
+
+Let $G$ be a locally profinite unimodular group and $K$ an open compact subgroup of $G$. Let $C_c^\infty(G)$ be the space of locally constant compactly supported functions $G \to \CC$ and $C_c^\infty(G//K)$ the $K$ left and right invariant subspace.
+
+These are naturally $\CC$-vector spaces and we endow them with an associative (not necessarily unital) ring structure coming from convolution
+$$f * h(g) := \int\limits_G f(x)h(x^{-1}g)dx.$$
+
+When $G$ is discrete this is the usual product on $\CC[G]$. Denote the algebras $\mathcal H(G)$ and $\mathcal H(G,K)$. $\mathcal H(G)$ is called the Hecke algebra of $G$.
+
+The element $e_K = \mu(K)^{-1} \mathbbm{1}_K \in \mathcal H(G)$ is idempotent and we have the property that 
+$$e_K * f = f \Leftrightarrow f \text{ is $K$ left invariant }.$$
+Thus $\mathcal H(G,K) = e_K * \mathcal H(G) * e_K$ and this now has a unit $e_K$. The point is that the compactness of $K$ ensures $e_K \in C_c^\infty(G)$.
+
+$\mathcal H(G)$ is spanned by indicator functions of $K'$ double cosets where $K'$ ranges over all compact open subgroups of $G$. If we normalise $$[K\alpha K] = \mu(K)^{-1} \mathbbm{1}_{K\alpha K}$$ then we have the formula
+$$[K\alpha K] * [K\beta K] = \sum\limits_{i,j}[K\alpha_i \beta_j K]$$ where $K\alpha K = \sqcup K\alpha_i$ and $K\beta K = \sqcup \beta_j K$. This determines multiplication in the Hecke algebra.
+
+\subsection{Smooth representations and $\mathcal H(G)$-modules}
+The concepts of smooth representations of $G$ and smooth modules over $\mathcal H(G)$ are interchangeable.
+
+Because $\mathcal H(G)$ does not have a unit, not every $\mathcal H(G)$-module $M$ satisfies $\mathcal H(G) M = M$. If it does, we say that $M$ is smooth or nondegenerate.
+
+\begin{defn}
+From a representation $V$ of $G$ we define the action of $\mathcal H(G)$ on $V$ via 
+$$f \cdot v := \int_G f(g) g \cdot v dg.$$
+\end{defn}
+This is like a weighted average of the action of $G$ on $v$, where the weighting comes from $f \in C_c^\infty(G)$. This defines an element of $V$ when $f \in C_c^\infty(G)$ as the integral reduces to a finite sum.
+
+
+Recall that the $e_K \in \mathcal H(G)$ are idempotents, and they induce the projection $V \to V^K$ onto the $K$-invariants of $V$. This is because $e_K$ annihilates the $K$-complement $V(K)$ of $V^K$ in $V$, and $e_K$ is trivial on $V^K$. So $e_K \cdot V=V^K$ and this is a $\mathcal H(G,K)$-module where $e_K$ acts via the identity.
+
+\begin{prop}
+    $V$ is a smooth representation of $G$ if and only if it is a smooth $\mathcal H(G)$-module.
+\end{prop}
+\begin{proof}
+If $V$ is a smooth representation then any $v \in V$ is of the form $e_K \cdot v$ for $K$ a compact open such that $v \in V^K$, so that $V$ is a smooth $\mathcal H(G)$-module. Conversely, $\mathcal H(G)$ is the union of the $e_K* \mathcal H(G) *e_K = \mathcal H(G,K)$ over all compact open $K$, and so if $V$ is a smooth $\mathcal H(G)$-module then any $v \in V$ is of the form $e_K * f * e_K \cdot v'$ for some $K, f, v'$, from which we deduce $e_K \cdot v=v$ and so $v \in V^K$.
+\end{proof}
+
+In the other direction, given $M$ a smooth $\mathcal H(G)$-module, one can show that $$\mathcal H(G) \otimes_{\mathcal H(G)} M = M$$ by smoothness. Then we can view $M$ as a smooth $G$ representation where $G$ acts on the first factor by left translation. Concretely, if $m \in M$ there exists $K$ such that $e_K \cdot m = m$. Then define $$g \cdot m := \mu(K)^{-1} \mathbbm{1}_{gK} \cdot m$$ where this is independent of $K$ due to this normalisation of $\mu(K)^{-1}$.
+
+\subsection{Information in the $K$-invariants $V^K$}
+For a smooth representation $V$ of $G$ it is often easier to study the $K$-invariants $V^K$ for compact open subgroups $K$ of $G$.
+
+\begin{lemma}
+    If $V$ is irreducible then $V^K$ is either 0 or a simple $\mathcal H(G,K)$-module.
+\end{lemma}
+\begin{proof}
+If we had $0 \neq M \subset V^K$ a $\mathcal H(G,K)$-module, then $0 \neq \mathcal H(G) M \subset V$ as smooth $\mathcal H(G)$-modules. Since smooth $\mathcal H(G)$-modules are the same as smooth $G$-representations, and $V$ is irreducible, we deduce $\mathcal H(G)M = V$. So then $$V^K = e_K V = e_K * \mathcal H(G)M = e_K * \mathcal H(G) *e_K M = \mathcal H(G,K)M=M$$ which implies the result.
+\end{proof}
+\begin{rem}
+    There is no parallel statement for $G$-representations because $V^K$ is not a representation of $G$.
+\end{rem}
+
+In fact we have a converse:
+\begin{lemma}
+    A smooth representation $V$ of $G$ is irreducible if and only if each $V^K$ is either 0 or a simple $\mathcal H(G,K)$-module for all compact open $K \leq G$.
+\end{lemma}
+\begin{proof}
+    One direction is proved above. If $V$ is not irreducible, and $W \neq 0$ is a proper subrepresentation, pick $v \in V-W$. By smoothness there exists $K$ such that $v \in V^K$, but then $v \not\in W^K$ so that $V^K$ is not 0 or simple.
+\end{proof}
+
+Surprisingly for any smooth representation $V$ of $G$, $V$ is determined by $V^K$ with its structure as a $\mathcal H(G,K)$-module, provided $V^K \neq 0$.
+
+\begin{prop}
+    The map $V \mapsto V^K$ induces a bijection between
+    \begin{itemize}
+        \item equivalence classes of irreducible smooth representations $V$ of $G$ with $V^K \neq 0$;
+        \item isomorphism classes of simple $\mathcal H(G,K)$-modules.
+    \end{itemize}
+\end{prop}
+\begin{proof}
+    *Bushnell-Henniart Section 4.3. Recovering $V$ from $V^K$ is not very enlightening - it's to do with $\mathcal H(G) \otimes_{\mathcal H(G,K)} M$.
+\end{proof}
+
+\subsection{Unramified representations of $G$}
+
+
+It is interesting to study the smooth representations $V$ with $V^K \neq 0$ as above. For example in an automorphic representation, Flath's theorem allows us to decompose into local factors, and furthermore tells us that almost all such local representations are unramified in the following sense:
+
+\begin{defn}
+    We say that an irreducible smooth representation $V$ of (the $F$-points of, where $F$ is a nonarchimedean local field) a reductive group $G$ is $K$-unramified if $G$ is unramified and $V^K \neq 0$.$G$ being unramified is a techinical condition and is equivalent (I think) to the existence of a hyperspecial subgroup $K \leq G(F)$. This means that $G$ has a model over $\mathcal O_F$ (for which the generic fibre recovers $G$ and the special fibre is reductive?) for which the $\mathcal O_F$ points are $K$.
+\end{defn}
+\begin{defn}
+    If $K \leq G(F)$ is hyperspecial then $\mathcal H(G,K)$ is called the unramified Hecke algebra.
+\end{defn}
+We often denote $G(F)$ simply by $G$.
+
+A corollary of the Satake isomorphism tells us that in this unramified case, the unramified Hecke algebra $\mathcal H(G,K)=C_c^\infty(G//K)$ is commutative. It follows that if $V$ is $K$-unramified (in particular irreducible) then $V^K$ is 1-dimensional (since it is irreducible by the previous subsection over a commutative algebra).
+
+\begin{defn}
+    Thus $\mathcal H(G,K)$ acts on $V^K$ via scaling, called the Hecke character of $V$. This is the $\CC$-linear map
+    \begin{equation*}
+        \begin{split}
+            \mathcal H(G,K) &\to \CC \\
+            f &\mapsto \mathrm{tr} \pi(f)
+        \end{split}
+    \end{equation*}
+    where $f \cdot v = \mathrm{tr}\pi(f) v $ for any $v \in V^K$.
+\end{defn}
+
+We give an alternative proof of the proposition of the previous subsection.
+
+\begin{prop}
+    Let $K \leq G$ be a compact open subgroup. If $V_1,V_2$ are irreducible smooth representations of $G$ such that $V_1^K$ and $V_2^K$ are nonzero and isomorphic as $\mathcal H(G,K)$-modules, then $V_1 \cong V_2$. In particular, unramified representations are determined by their Hecke characters.
+\end{prop}
+\begin{proof}
+    Proposition 7.1.1 of Getz-Hahn. The idea is to extend an isomorphism $$I: V_1^K \to V_2^K$$ to a $G$-intertwining map $V_1\to V_2$ of $\mathcal H(G)$-modules. Take an element $\pi_1(f) \cdot \phi \in V_1$, then the obvious thing is to map this to $\pi_2(f) \cdot I(\phi)$. Provided this is well defined, irreducibility of $V_1,V_2$ tell us that this gives an isomorphism $V_1 \cong V_2$.
+
+    To check this is well defined, it suffices to show that if $\pi_1(f)\phi =0$ then $\pi_2(f)I(\phi)=0$. We exploit the $\mathcal H(G,K)$-intertwining of $I$ (for the second implication below). For all $f_1 \in \mathcal H(G)$ we have:
+    $$\pi_1(f)\phi = 0 \Rightarrow \pi_1(e_K*f_1*f*e_K)\phi = 0 \Rightarrow \pi_2(e_K*f_1*f*e_K)I(\phi)=0.$$
+    This tells us that $\pi_2(f)I(\phi)=0$, otherwise $\pi_2(f_1)\pi_2(f)I(\phi)$ generates $V_2$ by irreducibility, and the image under $\pi_2(e_K)$ must be all of $V^K$ which is nonzero.
+\end{proof}
+
+\subsection{Example computation of Hecke operators for $\mathrm{GL}_2$}
+
+Let $G=\mathrm{GL}_2(F)$ and $K=\mathrm{GL}_2(\mathcal O)$ for $F$ a nonarchimedean local field with uniformiser $\varpi$. We have the Cartan decomposition $$G = \bigsqcup\limits_{a \geq b \in \ZZ} K \begin{pmatrix} \varpi^a & \\ & \varpi^b \end{pmatrix}K.$$ Let $S=K \begin{psmallmatrix} \varpi & \\ & \varpi \end{psmallmatrix}K$ and $T=K \begin{psmallmatrix} \varpi & \\ & 1 \end{psmallmatrix}K$, viewed as elements of $\mathcal H(G,K)$ via their indicator functions.
+
+\begin{lemma}
+    The unramified Hecke algebra is $\mathcal H(G,K) \cong \CC[S,S^{-1},T]$. In particular, this is commutative.
+\end{lemma}
+\begin{proof}
+    This is some induction argument using the formula for convolutions of these indicator functions.
+\end{proof}
+
+\begin{rem}
+    This fits into a general phenomenon - if $G$ is unramified and $K$ is a hyperspecial subgroup then the Satake isomorphism implies that the unramified Hecke algebra $\mathcal H(G,K)$ is always commutative.
+\end{rem}
+
+Later we will be interested in principal series representations, which are representations of $G$ coming from parabolic induction. So let $\chi = \begin{psmallmatrix}
+    \chi_1 & \\ & \chi_2
+\end{psmallmatrix}$ be a character of the torus $T$, and consider the normalised induced representation $$I(\chi) = \mathrm{Ind}_B^G \left( \chi \otimes \delta_B^{-1/2}\right)$$
+where we recall that this is the space of functions $G \to \CC$ with $f(bg) = \chi(b)\delta_B^{-1/2}(b) f(g)$ for $b \in B$.
+
+We briefly discuss the module character $\delta_B$. Although $G$ is unimodular (see Bushnell-Henniart Section 7.5), the Borel subgroup is not. We have $B=NT$ with $N\cong F$, $T \cong F^\times \times F^\times$ and $N$ normal in $B$. The failure of $B$ to be unimodular is a consequence of $T$ and $N$ not commuting. We can then define a linear function $I$ on $C_c^\infty(B) = C_c^\infty(T) \otimes C_c^\infty(N)$ by
+$$I(\Phi) = \int_T\int_N \Phi(tn) dt dn$$ using Haar measures on $T$ and $N$.
+
+\begin{prop}
+    $I$ is a left Haar integral on $B$.
+\end{prop}
+\begin{proof}
+    Let $b=sm \in TN$. By left invariance of $dt$ we have
+    $$\int_T\int_N \Phi(smtn)dtdn = \int_T\int_N \Phi(mtn)dtdn = \int_T\int_N \Phi(tt^{-1}mtn)dtdn.$$
+    Since we integrate $N$ first, we are integrating over fixed values of $t$ so that $t^{-1}mt \in N$ is just constant, so left invariance of $dn$ let's us pull out the $t^{-1}mt$ factor.
+\end{proof}
+
+\begin{prop}
+    The module $\delta_B$ of the group $B$ is
+    $$\delta_B : tn \mapsto |t_2/t_1|, \quad n \in N, t = \begin{psmallmatrix}
+        t_1 & 0 \\ 0 & t_2
+    \end{psmallmatrix} \in T$$
+\end{prop}
+\begin{proof}
+    By a similar argument as above, we have
+    $$\int_T\int_N \Phi(tnsm) dtdn = \int_T\int_N \Phi(tss^{-1}nsm)dtdn = \int_T\int_N \Phi(ts^{-1}ns) dt dn.$$ Identifying $N \cong F$ this is
+    $$\int_T\int_N \Phi(t \cdot \begin{psmallmatrix}
+        1 & s_1^{-1}xs_2 \\0&1 
+    \end{psmallmatrix}) d\mu_F(x) = |s_1/s_2|\int_T\int_N\Phi(tn)dtdn$$
+    so by definition of the module character we have $\delta_B(sm) = |s_2/s_1|$.
+\end{proof}
+
+Going back to our principal series representation, the following proposition computes the action of the unramified Hecke algebra on the $K$-invariant subspace:
+
+\begin{prop}
+    Let $\chi:T \to \CC^\times$ be an unramified character of the torus (meaning trivial on $\begin{psmallmatrix}\mathcal O^\times & \\ & \mathcal O^\times \end{psmallmatrix}$) and consider the normalised parabolic induction $$I(\chi) = \mathrm{Ind}_B^G(\chi \otimes \delta_B^{-1/2}).$$ For $K=\mathrm{GL}_2(\mathcal O)$ as usual, the space $I(\chi)^K$ is 1-dimensional. As a $\mathcal H(G,K)$-module this is determined by the actions of $S$ and $T$. Since $\chi$ is unramified we know $\chi_1(z)=\alpha^{v_F(z)}$ and $\chi_2(z)=\beta^{v_F(z)}$ for some $\alpha,\beta \in \CC^\times$. Then $S$ acts on $I(\chi)^K$ by scaling by $\alpha\beta$ and $T$ acts by scaling by $q^{1/2}(\alpha +\beta)$.  
+\end{prop}
+\begin{proof}
+    We have the Iwasawa decomposition $G=BK$ so that the functions $f \in I(\chi)^K$ satisfy
+    $$f(bk)=f(b)=\chi(b)\delta_B^{-1/2}(b) \cdot f(1)$$ with $f(1) \in \CC$, so the space is 1-dimensional spanned by $\hat{f}(bk) = \chi(b)\delta_B^{-1/2}(b)$.
+
+    The action of $S$ is given by:
+    \begin{equation*}
+        \begin{split}
+            S\cdot f &= \mu(K)^{-1}\int_G \mathbbm{1}_{K\begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}K}(g) g \cdot f dg \\
+            &= \mu(K)^{-1}\int_K \begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}k \cdot f dk \\
+            &= \begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}\cdot f \\
+            &= \chi\left(\begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}\right) \delta_B^{-1/2}\left(\begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}\right) f \\
+            &= \alpha\beta f
+        \end{split}
+    \end{equation*}
+    because $K\begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}K = \begin{psmallmatrix}\varpi & \\ & \varpi\end{psmallmatrix}K$.
+
+    And for $T$ we pick coset representatives for $K\begin{psmallmatrix}\varpi & \\ & 1\end{psmallmatrix}K/K$ given by $\begin{psmallmatrix}\varpi &a \\ & 1\end{psmallmatrix}$ and $\begin{psmallmatrix}1 & \\ & \varpi\end{psmallmatrix}$, where $a$ ranges over representatives of $\mathcal O/\varpi$. Writing down the integral for the action of $T$ we decompose this into a sum over these left cosets and we deduce that $T$ acts by
+    $$\chi_2(\varpi)|\varpi|^{-1/2}f + \sum\limits_{a \in \mathcal O/\varpi} \chi_1(\varpi)|\varpi|^{1/2}f = q^{1/2}(\alpha+\beta)$$
+    since, for example, $\chi(\begin{psmallmatrix}\varpi & a\\ & 1\end{psmallmatrix})=\chi_1(\varpi)=\alpha$ and $\delta_B^{-1/2}(\begin{psmallmatrix}\varpi & a\\ & 1\end{psmallmatrix}) = |\varpi|^{1/2}$.
+\end{proof}
+\begin{rem}
+    If we know the action of $S,T$ on $I(\chi)^K$ for some unramified character $\chi$ of the torus $T$, then we can recover $\alpha,\beta \in \CC^\times$ from the roots of the Satake polynomial $X^2-q^{-1/2}TX+S \in \mathcal H(G,K)[X]$.
+\end{rem}

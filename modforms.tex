@@ -1,0 +1,98 @@
+\section{Modular forms as automorphic forms}
+
+This will be based on notes by Jeremy Booher, the LTCC notes, Getz-Hahn and Bump.
+
+We will view modular forms as automorphic forms for $\GL_2$. We first recall the classical definition.
+
+\begin{defn}
+    For $\Gamma \leq \GL_2^+ (\QQ)$ a subgroup commensurable with $\SL_2 (\ZZ)$ (meaning the intersection has finite index with each), we define a modular form of level $\Gamma$ and weight $(k,t)$ for $t \in \RR$ to be a function $f: \mathcal H \to \CC$ such that
+    \begin{itemize}
+        \item $f$ is holomorphic;
+        \item $f|_{(k,t)} \gamma = f$ for all $\gamma \in \Gamma$, where $$f|_{(k,t)} \gamma(\tau) = (\det \gamma)^t (c\tau+d)^{-k} f\left(\frac{a\tau+b }{c\tau +d}\right)$$
+        \item $f_{(k,t)}\gamma(\tau)$ is bounded as $\tau \to i\infty$ for all $\gamma \in \GL_2^+ (\QQ)$.
+    \end{itemize}
+\end{defn}
+
+\subsection{Adelic formulation of the modular curve}
+
+The usual action of $\GL_2^+ (\RR)$ on the upper half plane $\mathcal H$ is transitive, and the stabiliser of $i$ is $\RR^+ \cdot \mathrm{SO}_2(\RR)$. Hence $\Gamma \backslash \mathcal H$ is in bijection with $\RR^+ \Gamma \backslash \GL_2^+ (\RR) / \mathrm{SO}_2 (\RR)$.
+
+We want to make this adelic. If $K \leq \GL_2(\adele_f)$ is a compact open subgroup, we have the quotient
+$$Y(K):= \GL_2^+(\QQ) \backslash \GL_2(\adele)/ \mathrm{SO}_2(\RR)\cdot K = \GL_2^+ (\QQ) \backslash \GL_2(\adele_f) \times \mathcal H/ K$$ where $\GL_2^+(\QQ)$ acts diagonally and $K$ acts by right translation on $\GL_2(\adele_f)$ only. Given $\Gamma$ as above we will associate an adelic modular curve $Y(K)$ for $K$ the closure of $\Gamma$ in the diagonal embedding of $\GL_2^+ (\QQ)$ in $\GL_2 (\adele_f)$. For example, the closure of $\Gamma_0(N)$ is the group $K_0(N)$ of matrices in $\GL_2(\hat{\ZZ})$ which are upper triangular mod $N$.
+
+\begin{thm}
+    Strong approximation holds for $\SL_2$, in the sense that $\SL_2(\QQ)$ is dense in $\SL_2(\adele_f)$.
+\end{thm}
+\begin{proof}
+    Since $\SL_2(\ZZ)$ surjects onto $\SL_2(\ZZ/N\ZZ)$ for all $N$, we see that the closure of $\SL_2(\QQ)$ contains $\SL_2(\hat{\ZZ})$. The Cartan decomposition tells us that
+    $$\SL_2(\adele_f) = \bigsqcup\limits_{m\geq 1} \SL_2(\hat{\ZZ})\begin{psmallmatrix}
+        m& \\ & m^{-1}
+    \end{psmallmatrix} \SL_2(\hat{\ZZ})$$ so that the closure of $\SL_2(\QQ)$ contains everything.
+\end{proof}
+
+
+\begin{prop}
+    There is a bijection between $\GL_2^+(\QQ)\backslash\GL_2(\adele_f)/K$ for $K$ compact open in $\GL_2(\adele_f)$, and $\QQ^+ \backslash \adele_f^\times/\det(K)$. In particular, if $\det(K) = \hat{\ZZ}$ (for example when $K=K_0(N)$), both sides are in bijection with the class group of $\QQ$, which is trivial.
+\end{prop}
+\begin{proof}
+The determinant map gives the exact sequence
+$$\xymatrix{1 \ar[r] & \SL_2(\adele_f) \ar[r] & \GL_2(\adele_f) \ar[r] & \adele_f^\times \ar[r] & 1}$$ from which we get
+$$\xymatrix{1 \ar[r] & \SL_2(\QQ)\backslash\SL_2(\adele_f)/K \cap \SL_2(\adele_f) \ar[r] & \GL_2^+(\QQ)\backslash\GL_2(\adele_f)/K \ar[r] & \QQ^+ \backslash \adele_f^\times/\det(K) \ar[r] & 1.}$$
+Strong approximation for $\SL_2$ tells us the first term is trivial.
+\end{proof}
+
+\begin{thm}\label{adelic curve}
+    For $K \leq \GL_2(\adele_f)$ compact open, $Y(K)$ is a manifold with finitely many connected components, each (non-canonically) isomorphic to a quotient of $\mathcal H$. More precisely, if $g_1,\dots,g_n \in \GL_2(\adele_f)$ are representatives of $\GL_2^+(\QQ)\backslash\GL_2(\adele_f)/K$ (by the above proposition this is equivalent to the determinants being representatives of $\adele_f^\times/\QQ^+\det(K)$), then defining $$\Gamma_i := \GL_2^+(\QQ) \cap g_i K g_i^{-1},$$ these $\Gamma_i$ are commensurable with $\SL_2(\ZZ)$ and 
+    \begin{equation*}
+        \begin{split}
+        \bigsqcup \Gamma_i \backslash \mathcal H &\to Y(K) \\
+        \tau &\mapsto (g_i,\tau)
+        \end{split}
+    \end{equation*}
+    is the isomorphism.
+\end{thm}
+\begin{proof}
+    Let $\gamma_i \in \Gamma_i$. To show the map is well defined we need that $(g_i,\gamma_i\tau) \sim (g_i,\tau)$. Certainly $(g_i,\tau) \sim (\gamma_ig_i,\gamma_i\tau)$ and then this is equivalent to $(g_i,\gamma_i\tau)$ since $\gamma_i \in g_iKg_i^{-1}$. The map is then well defined and is injective and surjective by construction (from the definition of the $g_i$). The $\Gamma_i$ are commensurable with $\SL_2(\ZZ)$ because $K$ is compact open and we can check this commensurability locally. 
+\end{proof}
+Note the $\Gamma_i$ are left quotients but $K$ is a right quotient.
+\begin{example}
+    When $K=K_0(N)$ (or $K_1(N)=\begin{psmallmatrix}
+        *&*\\0&1
+    \end{psmallmatrix}$) using $g_1=1$ we recover $\Gamma_0(N)\backslash \mathcal H \cong Y(K_0(N))$ via $\tau \mapsto (1,\tau)$.
+\end{example}
+\begin{defn}
+    An adelic modular form of weight $(k,t)$ is a function 
+    $$F: \GL_2(\adele_f) \times \mathcal H \to \CC$$ such that
+    \begin{itemize}
+        \item $F(g,\tau)$ is holomorphic in $\tau$ for every $g$.
+        \item There exists open compact $K \leq \GL_2(\adele_f)$ such that $F$ is invariant under right translation by $K$ in the first factor.
+        \item $F(\gamma g, -) = F(g, -)|_{(k,t)} \gamma^{-1}$ for all $\gamma \in \GL_2^+(\QQ)$ (the inverse is to go between left and right actions).
+        \item For all $g \in \GL_2(\adele_f)$, $F(g,\tau)$ is bounded as $\tau \to i\infty$.
+    \end{itemize}
+\end{defn}
+\begin{rem}
+    For $\gamma \in \GL_2^+(\QQ)$ we compute $$F(\gamma g, \gamma \tau) = F(g,\gamma\tau)|_{(k,t)}\gamma^{-1} = F(g,\tau) \cdot C$$ where $C$ is some constant only depending on $\gamma$ (from the $j$-factor and the determinant). Under some appropriate renormalisation this should give a function
+    $$\GL_2(\QQ) \backslash \GL_2(\adele_f)/\mathrm{SO}_2(\RR)K \to \CC$$ which resembles the usual definition of an automorphic form (the -1 determinant is absorbed in replacing $\GL_2^+(\RR)$ with $\GL_2(\RR)$). This possibly (probably) trades off $K$-invariance with $K$-finiteness.
+\end{rem}
+\begin{notn}
+    Let $M_{k,t}$ and $S_{k,t}$ be the space of such (cuspidal) adelic modular forms.
+\end{notn}
+The spaces $M_{k,t}$ and $S_{k,t}$ are representations of $\GL_2(\adele_f)$ under right translation on the first factor, and by definition (invariance under some compact open $K$) this representation is smooth.
+
+\begin{prop}
+    Evaluation at the $g_1,\dots,g_n$ in Theorem \ref{adelic curve} gives an isomorphism 
+    $$(S_{k,t})^K = \bigoplus\limits_{i=1}^n S_{k,t}(\Gamma_i)$$
+    where the right hand side consists of cusp forms in the classical sense. A similar result holds for $M_{k,t}$. In particular, these gives admissible representations of $\GL_2(\adele_f)$.
+\end{prop}
+\begin{proof}
+    Invert the isomorphism of Theorem \ref{adele curve} and check that the axioms defining a modular form match up.
+\end{proof}
+
+\begin{rem}
+    It is convenient to work with the space of all (cuspidal) adelic modular forms without having to specify the level, instead incorporating the level through the fixed points.
+\end{rem}
+\begin{example}
+    If $K=K_1(N) = \left\{\begin{psmallmatrix}
+        * & * \\ & 1
+    \end{psmallmatrix}\right\}$ we only have $g_1=1$ and we recover $S_{k,t}(\Gamma_1(N))$.
+\end{example}
