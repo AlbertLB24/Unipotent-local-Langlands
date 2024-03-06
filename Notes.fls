@@ -871,10 +871,10 @@ INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\tex\latex\bbm\ubbm.fd
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm10.tfm
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm7.tfm
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm5.tfm
+INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm12.tfm
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm8.tfm
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm6.tfm
-INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT .\modforms.tex
@@ -896,6 +896,10 @@ INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\s
 INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
 INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm12.tfm
+INPUT .\Notes.bbl
+INPUT Notes.bbl
+INPUT .\Notes.bbl
+INPUT Notes.bbl
 INPUT Notes.aux
 INPUT .\Notes.out
 INPUT .\Notes.out

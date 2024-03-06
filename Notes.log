@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.6)  3 MAR 2024 16:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.6)  6 MAR 2024 10:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -558,62 +558,61 @@ Package xypdf Info: Line width: 0.39998pt on input line 80.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (Section4.tex
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 12.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 21.
  (C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
-
-[1
+) [1
 
 {C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 42.
+(hyperref)                removing `math shift' on input line 28.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 42.
+(hyperref)                removing `math shift' on input line 28.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 42.
+(hyperref)                removing `math shift' on input line 52.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 42.
+(hyperref)                removing `math shift' on input line 52.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 42.
+(hyperref)                removing `math shift' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 52.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 52.
 
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 76.
+(hyperref)                removing `math shift' on input line 86.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 76.
+(hyperref)                removing `math shift' on input line 86.
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
+(hyperref)                removing `math shift' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 115.
+(hyperref)                removing `subscript' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
+(hyperref)                removing `math shift' on input line 125.
 
 [4] [5]) (modforms.tex [6] <xymatrix 5x1 158> <xymatrix 5x1 158> [7]
 
@@ -654,7 +653,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 57.
 
-[10] [11] <xymatrix 5x1 158> <xymatrix 5x1 158> [12] <xymatrix 6x1 169> <xymatrix 5x1 158> <xymatrix 5x1 158> <xymatrix 5x1 158> <xymatrix 5x1 158> [13] [14] <xymatrix 5x1 158> [15] <xymatrix 5x1 158> <xymatrix 5x1 158>) [16] (Notes.aux)
+[10] [11] <xymatrix 5x1 158> <xymatrix 5x1 158> [12] <xymatrix 6x1 169> <xymatrix 5x1 158> <xymatrix 5x1 158> <xymatrix 5x1 158> <xymatrix 5x1 158> [13] [14] <xymatrix 5x1 158> [15] <xymatrix 5x1 158> <xymatrix 5x1 158>) [16] (Notes.bbl) [17] (Notes.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -662,17 +661,17 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: 5FA9FF6AD015BCAE705C82585E2F62AE;2824.
  ) 
 Here is how much of TeX's memory you used:
- 16313 strings out of 478582
- 248294 string characters out of 2843401
- 605952 words of memory out of 3000000
- 34123 multiletter control sequences out of 15000+600000
+ 16325 strings out of 478582
+ 248480 string characters out of 2843401
+ 606002 words of memory out of 3000000
+ 34127 multiletter control sequences out of 15000+600000
  489424 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,23n,63p,3336b,447s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Yiannis\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Yiannis\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xyatip10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on Notes.pdf (16 pages, 345208 bytes).
+Output written on Notes.pdf (17 pages, 348794 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

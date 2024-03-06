@@ -1,5 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1709481939 "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" "Notes.pdf" "Notes" 1709481941 0
+["bibtex Notes"] 1709722067 "Notes.aux" "Notes.bbl" "Notes" 1709722223 0
+  "./references.bib" 1709722062 556 465673df491b3e3effd774c683d41696 ""
+  "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "Notes.aux" 1709722222 2767 71411927765d5ab137ffb2cc9f9da7a9 "pdflatex"
+  (generated)
+  "Notes.bbl"
+  "Notes.blg"
+  (rewritten before read)
+["pdflatex"] 1709722221 "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" "Notes.pdf" "Notes" 1709722223 0
   "C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1696808663 82116 9c5728d1d3662e284c07c1325550ed71 ""
   "C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1654473921 11548 c76fb3c924b071dbff8f437a8a012d4e ""
   "C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbm/dpi600/bbm10.pk" 1663208406 6984 8ff7f869ae2664fed78acfc5a56c2d3a ""
@@ -175,13 +183,14 @@
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238465940 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "Notes.aux" 1709481940 2635 fa3cf185fa1baaed9d73eb0f3fa01e1b "pdflatex"
-  "Notes.out" 1709481940 2824 5fa9ff6ad015bcae705c82585e2f62ae "pdflatex"
-  "Notes.tex" 1709481923 2328 0e13b5a06a380bfceba05b4429922d10 ""
-  "Section4.tex" 1709481923 15143 7d8296675f3cc65ee8e03394758fa7be ""
-  "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" 1709481923 2328 0e13b5a06a380bfceba05b4429922d10 ""
+  "Notes.aux" 1709722222 2767 71411927765d5ab137ffb2cc9f9da7a9 "pdflatex"
+  "Notes.bbl" 1709722067 417 d171fc366fe564cac6ba32a6706df9fe "bibtex Notes"
+  "Notes.out" 1709722222 2824 5fa9ff6ad015bcae705c82585e2f62ae "pdflatex"
+  "Notes.tex" 1709720478 2392 52ad49ca16626f03779524bdac0bc746 ""
+  "Section4.tex" 1709722220 15883 8b2b1f0b0ecc619be6d986eb5f8f2014 ""
+  "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" 1709720478 2392 52ad49ca16626f03779524bdac0bc746 ""
   "modforms.tex" 1709481923 7365 e70624f68dc0e273ac5e3c8c883b5645 ""
-  "principal_series.tex" 1709481923 24353 2d1ade60386e75bc600df543304caaee ""
+  "principal_series.tex" 1709720527 24346 104ac8ae0e4396bc3057b07faee95aa7 ""
   (generated)
   "Notes.aux"
   "Notes.log"

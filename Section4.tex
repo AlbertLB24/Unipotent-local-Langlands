@@ -1,22 +1,32 @@
 \section{Hecke Algebras}
 
-If $G$ is a finite group, representations of $G$ are the same as $\CC[G]$-modules. We want to extend this notion to smooth representations of locally profinite groups where we need to correctly interpret the group algebra.
+In this section, we define the Hecke algebra $\mathcal H(G)$ associated to a locally profinite (unimodular) group $G$ and explain how to switch between smooth representations of $G$ and smooth modules of $\mathcal H(G)$. Under certain conditions on $G$ we consider a particular subalgebra of $\mathcal H(G)$; the unramified Hecke algebra $\mathcal H(G,K)$, which turns out to be commutative by the Satake isomorphism. We use as reference Chapter 4 of \cite{BH1} and Chapter 5 of \cite{GH1}.
 
-Let $G$ be a locally profinite unimodular group and $K$ an open compact subgroup of $G$. Let $C_c^\infty(G)$ be the space of locally constant compactly supported functions $G \to \CC$ and $C_c^\infty(G//K)$ the $K$ left and right invariant subspace.
+If $G$ is a finite group, representations of $G$ are the same as $\CC[G]$-modules. We want to extend this notion to smooth representations of locally profinite groups, where we need to correctly interpret the group algebra.
+
+Let $G$ be a locally profinite unimodular group and $K$ an open compact subgroup of $G$. Let $C_c^\infty(G)$ be the space of locally constant compactly supported functions $G \to \CC$ and $C_c^\infty(G//K)$ the $K$ bi-invariant subspace.
 
 These are naturally $\CC$-vector spaces and we endow them with an associative (not necessarily unital) ring structure coming from convolution
-$$f * h(g) := \int\limits_G f(x)h(x^{-1}g)dx.$$
+$$f * h(g) := \int\limits_G f(x)h(x^{-1}g)dx$$
+where we fix a Haar measure $\mu = dx$ on $G$.
 
-When $G$ is discrete this is the usual product on $\CC[G]$. Denote the algebras $\mathcal H(G)$ and $\mathcal H(G,K)$. $\mathcal H(G)$ is called the Hecke algebra of $G$.
+When $G$ is discrete this is the usual product on $\CC[G]$. 
+
+\begin{defn}
+Let $\mathcal H(G)$ and $\mathcal H(G,K)$ denote $C_c^\infty(G)$ and $C_c^\infty(G//K)$ with the algebra structure specified above. We call $\mathcal H(G)$ the Hecke algebra of $G$.
+\end{defn}
+
+We study these algebras in more detail:
 
 The element $e_K = \mu(K)^{-1} \mathbbm{1}_K \in \mathcal H(G)$ is idempotent and we have the property that 
 $$e_K * f = f \Leftrightarrow f \text{ is $K$ left invariant }.$$
-Thus $\mathcal H(G,K) = e_K * \mathcal H(G) * e_K$ and this now has a unit $e_K$. The point is that the compactness of $K$ ensures $e_K \in C_c^\infty(G)$.
+Thus $\mathcal H(G,K) = e_K * \mathcal H(G) * e_K$, and this subalgebra now has a unit $e_K$. The compactness of $K$ ensures $e_K \in C_c^\infty(G)$.
 
-$\mathcal H(G)$ is spanned by indicator functions of $K'$ double cosets where $K'$ ranges over all compact open subgroups of $G$. If we normalise $$[K\alpha K] = \mu(K)^{-1} \mathbbm{1}_{K\alpha K}$$ then we have the formula
+By Lemma 5.2.1 of \cite{GH1}, $\mathcal H(G)$ is spanned by indicator functions of $K'$-double cosets, where $K'$ ranges over all compact open subgroups of $G$. If we normalise these indicator functions by defining $$[K\alpha K] = \mu(K)^{-1} \mathbbm{1}_{K\alpha K},$$ then we have the formula
 $$[K\alpha K] * [K\beta K] = \sum\limits_{i,j}[K\alpha_i \beta_j K]$$ where $K\alpha K = \sqcup K\alpha_i$ and $K\beta K = \sqcup \beta_j K$. This determines multiplication in the Hecke algebra.
 
 \subsection{Smooth representations and $\mathcal H(G)$-modules}
+
 The concepts of smooth representations of $G$ and smooth modules over $\mathcal H(G)$ are interchangeable.
 
 Because $\mathcal H(G)$ does not have a unit, not every $\mathcal H(G)$-module $M$ satisfies $\mathcal H(G) M = M$. If it does, we say that $M$ is smooth or nondegenerate.
