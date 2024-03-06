@@ -47,6 +47,7 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\GG}{\mathbb{G}}
 \newcommand{\adele}{\mathbb{A}}
+\newcommand{\pp}{\mathfrak{p}}
 
 % mathfra
 \newcommand{\fg}{\mathfrak{g}}
@@ -71,6 +72,7 @@
 \newtheorem{notn}[thm]{Notation}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{example}[thm]{Example}
+\newtheorem{examples}[thm]{Examples}
 \newtheorem{fact}[thm]{Fact}
 
 
@@ -81,15 +83,22 @@
 	\maketitle
 	\pagenumbering{arabic}
 
+\section{Locally Profinite Groups and Smooth Representations}
+\input{section_one}
+
+\section{Hecke Algebras}
 \input{Section4}
 
+\section{Modular forms as automorphic forms}
 \input{modforms.tex}
 
+\section{Principal series representations of $\GL_2$}
 \input{principal_series}
 
 \newpage
 
 \bibliography{references}
 \bibliographystyle{plain}
+
 
 \end{document}
