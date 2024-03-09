@@ -1,13 +1,19 @@
-\begin{thebibliography}{1}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{GH24}
 
-\bibitem{BH1}
-C.~J. Bushnell and G.~Henniart.
-\newblock {\em {The Local Langlands Conjecture for GL(2)}}.
-\newblock Grundlehren der mathematischen Wissenschaften. Springer Berlin, 2006.
+\bibitem[BH06]{BH1}
+C.~J. Bushnell and G.~Henniart, \emph{{The Local Langlands Conjecture for
+  GL(2)}}, Grundlehren der mathematischen Wissenschaften, Springer Berlin,
+  2006.
 
-\bibitem{GH1}
-J.~R. Getz and H.~Hahn.
-\newblock {\em {An Introduction to Automorphic Representations}}.
-\newblock Graduate Texts in Mathematics. Springer Cham, 2024.
+\bibitem[GH24]{GH1}
+J.~R. Getz and H.~Hahn, \emph{{An Introduction to Automorphic
+  Representations}}, Graduate Texts in Mathematics, Springer Cham, 2024.
 
 \end{thebibliography}

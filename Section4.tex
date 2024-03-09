@@ -25,102 +25,103 @@ $$[K\alpha K] * [K\beta K] = \sum\limits_{i,j}[K\alpha_i \beta_j K]$$ where $K\a
 
 \subsection{Smooth representations and $\mathcal H(G)$-modules}
 
-The concepts of smooth representations of $G$ and smooth modules over $\mathcal H(G)$ are interchangeable.
+We now explain how the concepts of smooth representations of $G$ and smooth modules over $\mathcal H(G)$ are interchangeable. To define these smooth modules, we note that the Hecke algebra $\mathcal H(G)$ does not in general have a unit. Consequently, not every $\mathcal H(G)$-module $M$ satisfies $\mathcal H(G) M = M$. 
 
-Because $\mathcal H(G)$ does not have a unit, not every $\mathcal H(G)$-module $M$ satisfies $\mathcal H(G) M = M$. If it does, we say that $M$ is smooth or nondegenerate.
+\begin{defn}
+    We say that a $\mathcal H(G)$-module $M$ is smooth if $\mathcal H(G) M = M$. 
+\end{defn}
 
 \begin{defn}
 From a representation $V$ of $G$ we define the action of $\mathcal H(G)$ on $V$ via 
 $$f \cdot v := \int_G f(g) g \cdot v dg.$$
 \end{defn}
-This is like a weighted average of the action of $G$ on $v$, where the weighting comes from $f \in C_c^\infty(G)$. This defines an element of $V$ when $f \in C_c^\infty(G)$ as the integral reduces to a finite sum.
+This can be viewed as a weighted average of the action of $G$ on $v$, where the weighting is described by $f \in C_c^\infty(G)$. The integral defines an element of $V$ when $f \in C_c^\infty(G)$ as the integral reduces to a finite sum.
 
-
-Recall that the $e_K \in \mathcal H(G)$ are idempotents, and they induce the projection $V \to V^K$ onto the $K$-invariants of $V$. This is because $e_K$ annihilates the $K$-complement $V(K)$ of $V^K$ in $V$, and $e_K$ is trivial on $V^K$. So $e_K \cdot V=V^K$ and this is a $\mathcal H(G,K)$-module where $e_K$ acts via the identity.
-
-\begin{prop}
-    $V$ is a smooth representation of $G$ if and only if it is a smooth $\mathcal H(G)$-module.
-\end{prop}
+\begin{lemma}\label{project}
+    Under this action, $e_K \in \mathcal H(G)$, for $K\leq G$ a compact open, is the projection $V \to V^K$ onto the $K$-invariants of $V$. In particular, $e_K$ is an idempotent element of $\mathcal H(G)$, it is the identity element of $\mathcal H(G,K)$, and $V^K$ is a $\mathcal H(G,K)$-module.
+\end{lemma}
 \begin{proof}
-If $V$ is a smooth representation then any $v \in V$ is of the form $e_K \cdot v$ for $K$ a compact open such that $v \in V^K$, so that $V$ is a smooth $\mathcal H(G)$-module. Conversely, $\mathcal H(G)$ is the union of the $e_K* \mathcal H(G) *e_K = \mathcal H(G,K)$ over all compact open $K$, and so if $V$ is a smooth $\mathcal H(G)$-module then any $v \in V$ is of the form $e_K * f * e_K \cdot v'$ for some $K, f, v'$, from which we deduce $e_K \cdot v=v$ and so $v \in V^K$.
+    Let $V(K) \leq V$ be the subspace spanned by vectors of the form $k \cdot v-v$. Since $e_K$ is invariant under $K$-translation, it is zero on $V(K)$. The normalisation of $e_K$ is such that $e_K$ is the identity on $V^K$, and this implies the result.
 \end{proof}
 
-In the other direction, given $M$ a smooth $\mathcal H(G)$-module, one can show that $$\mathcal H(G) \otimes_{\mathcal H(G)} M = M$$ by smoothness. Then we can view $M$ as a smooth $G$ representation where $G$ acts on the first factor by left translation. Concretely, if $m \in M$ there exists $K$ such that $e_K \cdot m = m$. Then define $$g \cdot m := \mu(K)^{-1} \mathbbm{1}_{gK} \cdot m$$ where this is independent of $K$ due to this normalisation of $\mu(K)^{-1}$.
+
+\begin{prop}
+    A representation $V$ of $G$ is smooth if and only if it is a smooth $\mathcal H(G)$-module.
+\end{prop}
+\begin{proof}
+If $V$ is a smooth representation, then any $v \in V$ is $K$-invariant for some compact open $K$, and so $v=e_K \cdot v$. This implies that $V$ is a smooth $\mathcal H(G)$-module. Conversely, $\mathcal H(G)$ is the union of $e_K* \mathcal H(G) *e_K = \mathcal H(G,K)$ over all compact open $K$, and so if $V$ is a smooth $\mathcal H(G)$-module then any $v \in V$ is of the form $e_K * f * e_K \cdot v'$ for some $K, f, v'$. Then $e_K \cdot v=v$ and so $v \in V^K$.
+\end{proof}
+
+So we can view smooth representations of $G$ as smooth $\mathcal H(G)$-module. In the other direction, given $M$ a smooth $\mathcal H(G)$-module, we have $$\mathcal H(G) \otimes_{\mathcal H(G)} M = M$$ by smoothness. We can then view $M$ as a smooth $G$ representation by letting $G$ act on the first factor by left translation. Concretely, if $m \in M$ there exists $K$ such that $e_K \cdot m = m$. Then define $$g \cdot m := \mu(K)^{-1} \mathbbm{1}_{gK} \cdot m,$$ where this is independent of $K$ due to the normalisation factor $\mu(K)^{-1}$.
 
 \subsection{Information in the $K$-invariants $V^K$}
 For a smooth representation $V$ of $G$ it is often easier to study the $K$-invariants $V^K$ for compact open subgroups $K$ of $G$.
 
-\begin{lemma}
-    If $V$ is irreducible then $V^K$ is either 0 or a simple $\mathcal H(G,K)$-module.
-\end{lemma}
-\begin{proof}
-If we had $0 \neq M \subset V^K$ a $\mathcal H(G,K)$-module, then $0 \neq \mathcal H(G) M \subset V$ as smooth $\mathcal H(G)$-modules. Since smooth $\mathcal H(G)$-modules are the same as smooth $G$-representations, and $V$ is irreducible, we deduce $\mathcal H(G)M = V$. So then $$V^K = e_K V = e_K * \mathcal H(G)M = e_K * \mathcal H(G) *e_K M = \mathcal H(G,K)M=M$$ which implies the result.
-\end{proof}
-\begin{rem}
-    There is no parallel statement for $G$-representations because $V^K$ is not a representation of $G$.
-\end{rem}
 
-In fact we have a converse:
-\begin{lemma}
+
+\begin{lemma}\label{K inv}
     A smooth representation $V$ of $G$ is irreducible if and only if each $V^K$ is either 0 or a simple $\mathcal H(G,K)$-module for all compact open $K \leq G$.
 \end{lemma}
 \begin{proof}
-    One direction is proved above. If $V$ is not irreducible, and $W \neq 0$ is a proper subrepresentation, pick $v \in V-W$. By smoothness there exists $K$ such that $v \in V^K$, but then $v \not\in W^K$ so that $V^K$ is not 0 or simple.
+    Suppose $V$ is irreducible. If we had $0 \neq M \subset V^K$ a $\mathcal H(G,K)$-module, then $0 \neq \mathcal H(G) M \subset V$ as smooth $\mathcal H(G)$-modules. Since smooth $\mathcal H(G)$-modules are the same as smooth $G$-representations, and $V$ is irreducible, we deduce $\mathcal H(G)M = V$. So then $$V^K = e_K V = e_K * \mathcal H(G)M = e_K * \mathcal H(G) *e_K M = \mathcal H(G,K)M=M$$ which implies the result.
+
+    If $V$ is not irreducible, and $W \neq 0$ is a proper subrepresentation, pick $v \in V-W$. By smoothness, there exists $K$ such that $v \in V^K$, but then $v \not\in W^K$ so that $V^K$ is not 0 or simple.
 \end{proof}
 
-Surprisingly for any smooth representation $V$ of $G$, $V$ is determined by $V^K$ with its structure as a $\mathcal H(G,K)$-module, provided $V^K \neq 0$.
+The next result tells us that for any $K$, any smooth representation $V$ of $G$ is determined by $V^K$ with its structure as a $\mathcal H(G,K)$-module, provided $V^K \neq 0$.
 
-\begin{prop}
+\begin{prop}\label{K bij}
     The map $V \mapsto V^K$ induces a bijection between
     \begin{itemize}
         \item equivalence classes of irreducible smooth representations $V$ of $G$ with $V^K \neq 0$;
-        \item isomorphism classes of simple $\mathcal H(G,K)$-modules.
+        \item isomorphism classes of simple (by definition nonzero) $\mathcal H(G,K)$-modules.
     \end{itemize}
 \end{prop}
 \begin{proof}
-    *Bushnell-Henniart Section 4.3. Recovering $V$ from $V^K$ is not very enlightening - it's to do with $\mathcal H(G) \otimes_{\mathcal H(G,K)} M$.
+    Proposition 4.3 of \cite{BH1}.
 \end{proof}
 
 \subsection{Unramified representations of $G$}
 
 
-It is interesting to study the smooth representations $V$ with $V^K \neq 0$ as above. For example in an automorphic representation, Flath's theorem allows us to decompose into local factors, and furthermore tells us that almost all such local representations are unramified in the following sense:
+It is interesting to study the smooth representations $V$ with $V^K \neq 0$ as above. For example, in an automorphic representation, Flath's theorem (\cite{GH1} Section 5.7) allows us to decompose into local factors, and furthermore tells us that almost all such local representations are unramified in the following sense:
 
 \begin{defn}
-    We say that an irreducible smooth representation $V$ of (the $F$-points of, where $F$ is a nonarchimedean local field) a reductive group $G$ is $K$-unramified if $G$ is unramified and $V^K \neq 0$.$G$ being unramified is a techinical condition and is equivalent (I think) to the existence of a hyperspecial subgroup $K \leq G(F)$. This means that $G$ has a model over $\mathcal O_F$ (for which the generic fibre recovers $G$ and the special fibre is reductive?) for which the $\mathcal O_F$ points are $K$.
+    We consider the case $G=\GL_2(F)$. We say that an irreducible smooth representation $V$ of $G$ is unramified if $V^K \neq 0$ for $K= \GL_2(\cO_F)$. See Section 5.5 of \cite{GH1} for a more general definition for reductive groups.
 \end{defn}
+
+For the remainder of this subsection we work in the context of $G=\GL_2(F)$ and $K = \GL_2(\cO_F)$ for simplicity. The results generalise to reductive groups $G$ as in Sections 5.5 and 7.1 of \cite{GH1}.
 \begin{defn}
-    If $K \leq G(F)$ is hyperspecial then $\mathcal H(G,K)$ is called the unramified Hecke algebra.
+    For $K$ as above, $\mathcal H(G,K)$ is called the unramified Hecke algebra of $G$.
 \end{defn}
-We often denote $G(F)$ simply by $G$.
 
-A corollary of the Satake isomorphism tells us that in this unramified case, the unramified Hecke algebra $\mathcal H(G,K)=C_c^\infty(G//K)$ is commutative. It follows that if $V$ is $K$-unramified (in particular irreducible) then $V^K$ is 1-dimensional (since it is irreducible by the previous subsection over a commutative algebra).
+An application of the Satake isomorphism (\cite{GH1} Theorem 5.5.1) tells us that in this unramified case, the unramified Hecke algebra $\mathcal H(G,K)$ is commutative. It follows that if $V$ is $K$-unramified (in particular irreducible) then $V^K$ is 1-dimensional by Lemma \ref{K inv}. Thus $\mathcal H(G,K)$ acts on $V^K$ via scaling, called the Hecke character of $V$.
 
 \begin{defn}
-    Thus $\mathcal H(G,K)$ acts on $V^K$ via scaling, called the Hecke character of $V$. This is the $\CC$-linear map
+    The Hecke character (with respect to $K$) of a smooth representation $(\pi,V)$ of $G$ is the $\CC$-linear map
     \begin{equation*}
         \begin{split}
             \mathcal H(G,K) &\to \CC \\
             f &\mapsto \mathrm{tr} \pi(f)
         \end{split}
     \end{equation*}
-    where $f \cdot v = \mathrm{tr}\pi(f) v $ for any $v \in V^K$.
+    defined by $f \cdot v =: \mathrm{tr}\pi(f) v $ for any $v \in V^K$.
 \end{defn}
 
-We give an alternative proof of the proposition of the previous subsection.
+We give an alternative proof of Proposition \ref{K bij}.
 
 \begin{prop}
     Let $K \leq G$ be a compact open subgroup. If $V_1,V_2$ are irreducible smooth representations of $G$ such that $V_1^K$ and $V_2^K$ are nonzero and isomorphic as $\mathcal H(G,K)$-modules, then $V_1 \cong V_2$. In particular, unramified representations are determined by their Hecke characters.
 \end{prop}
 \begin{proof}
-    Proposition 7.1.1 of Getz-Hahn. The idea is to extend an isomorphism $$I: V_1^K \to V_2^K$$ to a $G$-intertwining map $V_1\to V_2$ of $\mathcal H(G)$-modules. Take an element $\pi_1(f) \cdot \phi \in V_1$, then the obvious thing is to map this to $\pi_2(f) \cdot I(\phi)$. Provided this is well defined, irreducibility of $V_1,V_2$ tell us that this gives an isomorphism $V_1 \cong V_2$.
+    This is Proposition 7.1.1 of \cite{GH1}. The idea is to extend an isomorphism $$I: V_1^K \to V_2^K$$ to a $G$-intertwining map $V_1\to V_2$ of $\mathcal H(G)$-modules. By irreducibility, $V_i = \mathcal H(G)V_i^K$. Take an element $\pi_1(f) \cdot \phi \in V_1$, with $f \in \mathcal H(G), \phi \in V_1^K$, then the obvious choice is to map this to $\pi_2(f) \cdot I(\phi)$. Provided this is well defined, this is a nonzero homomorphism of $\mathcal H(G)$-modules, so irreducibility of $V_1,V_2$ implies this is an isomorphism $V_1 \cong V_2$.
 
     To check this is well defined, it suffices to show that if $\pi_1(f)\phi =0$ then $\pi_2(f)I(\phi)=0$. We exploit the $\mathcal H(G,K)$-intertwining of $I$ (for the second implication below). For all $f_1 \in \mathcal H(G)$ we have:
-    $$\pi_1(f)\phi = 0 \Rightarrow \pi_1(e_K*f_1*f*e_K)\phi = 0 \Rightarrow \pi_2(e_K*f_1*f*e_K)I(\phi)=0.$$
-    This tells us that $\pi_2(f)I(\phi)=0$, otherwise $\pi_2(f_1)\pi_2(f)I(\phi)$ generates $V_2$ by irreducibility, and the image under $\pi_2(e_K)$ must be all of $V^K$ which is nonzero.
+    $$\pi_1(f)\phi = 0 \Rightarrow \pi_1(e_K*f_1*f*e_K)\phi = 0 \Rightarrow \pi_2(e_K*f_1*f*e_K)I(\phi)=\pi_2(e_K*f_1*f)I(\phi)=0.$$
+    By Lemma \ref{project}, $e_K$ acts on $V_2$ by projection to $V_2^K$. If $\pi_2(f)I(\phi) \neq 0$, then $\pi_2(f_1)\pi_2(f)I(\phi)$, over all $f_1 \in \mathcal H(G)$, generates $V_2$ by irreducibility. The image under $\pi_2(e_K)$ is the exactly $V^K$, which is nonzero, contradicting the implication above.
 \end{proof}
 
-\subsection{Example computation of Hecke operators for $\mathrm{GL}_2$}
+\subsection{Example computation of Hecke operators for $\mathrm{GL}_2(F)$}
 
 Let $G=\mathrm{GL}_2(F)$ and $K=\mathrm{GL}_2(\mathcal O)$ for $F$ a nonarchimedean local field with uniformiser $\varpi$. We have the Cartan decomposition $$G = \bigsqcup\limits_{a \geq b \in \ZZ} K \begin{pmatrix} \varpi^a & \\ & \varpi^b \end{pmatrix}K.$$ Let $S=K \begin{psmallmatrix} \varpi & \\ & \varpi \end{psmallmatrix}K$ and $T=K \begin{psmallmatrix} \varpi & \\ & 1 \end{psmallmatrix}K$, viewed as elements of $\mathcal H(G,K)$ via their indicator functions.
 

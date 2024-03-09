@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -21,9 +24,18 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Continuous Characters of Local Fields}{3}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Hecke Algebras}{3}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Smooth representations and $\mathcal  H(G)$-modules}{4}{subsection.2.1}\protected@file@percent }
+\newlabel{project}{{2.4}{4}{}{thm.2.4}{}}
+\citation{BH1}
+\citation{GH1}
+\citation{GH1}
+\citation{GH1}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Information in the $K$-invariants $V^K$}{5}{subsection.2.2}\protected@file@percent }
+\newlabel{K inv}{{2.6}{5}{}{thm.2.6}{}}
+\newlabel{K bij}{{2.7}{5}{}{thm.2.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Unramified representations of $G$}{5}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Example computation of Hecke operators for $\mathrm  {GL}_2$}{6}{subsection.2.4}\protected@file@percent }
+\citation{GH1}
+\citation{GH1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Example computation of Hecke operators for $\mathrm  {GL}_2(F)$}{6}{subsection.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Modular forms as automorphic forms}{8}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Adelic formulation of the modular curve}{9}{subsection.3.1}\protected@file@percent }
 \newlabel{adelic curve}{{3.4}{10}{}{thm.3.4}{}}
@@ -38,7 +50,7 @@
 \newlabel{reduce to N}{{4.11}{14}{}{thm.4.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Classification of principal series representations}{17}{subsection.4.4}\protected@file@percent }
 \bibdata{references}
-\bibcite{BH1}{1}
-\bibcite{GH1}{2}
-\bibstyle{plain}
+\bibcite{BH1}{BH06}
+\bibcite{GH1}{GH24}
+\bibstyle{amsalpha}
 \gdef \@abspage@last{19}
