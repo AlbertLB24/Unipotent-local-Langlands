@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.6)  9 MAR 2024 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.6)  10 MAR 2024 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -618,64 +618,53 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 124.
 
-[6] [7]) (modforms.tex [8] <xymatrix 5x1 158> <xymatrix 5x1 158> [9] [10]
-
-LaTeX Warning: Reference `adele curve' on page 11 undefined on input line 86.
-
-)
+[6] [7])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 95.
+(hyperref)                removing `subscript' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 96.
 
-(principal_series.tex
-Overfull \hbox (12.09789pt too wide) in paragraph at lines 13--14
-[]\OT1/cmr/m/n/10 To un-der-stand the de-com-po-si-tion of parabol-i-cally in-duced rep-re-sen-ta-tions into ir-re-ducibles as $\OML/cmm/m/it/10 G$\OT1/cmr/m/n/10 -representations,
- []
+(principal_series.tex [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 23.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 15.
+(hyperref)                removing `math shift' on input line 23.
+
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 65.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 15.
+(hyperref)                removing `math shift' on input line 65.
 
-[11]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 57.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 57.
-
-[12] [13] <xymatrix 5x1 158> <xymatrix 5x1 158> [14] <xymatrix 6x1 169> <xymatrix 5x1 158> <xymatrix 5x1 158> [15] <xymatrix 5x1 158> <xymatrix 5x1 158> [16] [17] <xymatrix 5x1 158> <xymatrix 5x1 158> <xymatrix 5x1 158>) [18] (Notes.bbl) [19] (Notes.aux)
-
-LaTeX Warning: There were undefined references.
-
+[10] [11] <xymatrix 5x1 158> <xymatrix 5x1 158> [12] <xymatrix 6x1 169> <xymatrix 5x1 158> <xymatrix 5x1 158> [13] <xymatrix 5x1 158> <xymatrix 5x1 158> [14] [15] <xymatrix 5x1 158> <xymatrix 5x1 158> <xymatrix 5x1 158> [16]) [17] (Notes.bbl) [18] (Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: E26A562C8C6DFF8AD4361F873F61ADE0;3692.
+(rerunfilecheck)             Checksum: 1424FF15E19EDAD27B32A669FD396984;3198.
  ) 
 Here is how much of TeX's memory you used:
- 16377 strings out of 478582
- 249238 string characters out of 2843401
- 605152 words of memory out of 3000000
- 34156 multiletter control sequences out of 15000+600000
+ 16359 strings out of 478582
+ 248972 string characters out of 2843401
+ 608247 words of memory out of 3000000
+ 34153 multiletter control sequences out of 15000+600000
  491076 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,23n,63p,3336b,562s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 60i,23n,63p,3336b,534s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Yiannis\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Yiannis\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xyatip10.pfb><C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on Notes.pdf (19 pages, 370456 bytes).
+Output written on Notes.pdf (18 pages, 357767 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 365 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
