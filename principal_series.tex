@@ -66,12 +66,24 @@ The following is a useful equivalent definition of $V(\theta)$:
 
 Now we consider $V$ an irreducible smooth representation of $M$. 
 
-\begin{lemma}\label{coinvariants}
-    The subspace $V(N) \leq V$ is a representation of $M$, and so $V_N$ is as well. The $V_\theta$ are conjugate under $M$ (so in particular are not representations of $M$). 
+\begin{lemma}
+	The subspace $V(N) \leq V$ is a representation of $M$, and so $V_N$ is as well. Moreover, $S$ permutes the subspaces $V(\theta)$ with $\theta \not= 1$ transitively, and hence the spaces $V_\theta$ are isomorphic.
 \end{lemma}
 \begin{proof}
-    The first line comes from the computation 
-    $$mn\cdot v - m\cdot v = n'm\cdot v - m\cdot v$$ for some $n' \in N$, using the fact that $N \lhd M$. The second line is because conjugation by $M$ acts transitively on the nontrivial elements of $N$, and hence on the nontrivial characters of $N \cong F$, where we use the bijection $F \leftrightarrow \hat{F}$.
+	The first claim comes from the computation 
+	$$mn\cdot v - m\cdot v = n'm\cdot v - m\cdot v$$ for some $n' \in N$, using the fact that $N \lhd M$. For the second claim we have the computation
+	\[s(nv - \theta(n)v) = sns^{-1}\cdot sv - \theta (s^{-1}(sns^{-1})s)sv = n'\cdot sv - \theta(s^{-1}n's) sv\]
+	where $n' = sns^{-1}\in N$. Hence $sV(\theta) = V(\theta')$ there $\theta'(n) = \theta(s^{-1}ns)$. Now because of the computation
+	\[\begin{pmatrix}
+		a & 0 \\ 0 & 1
+	\end{pmatrix}\begin{pmatrix}
+		1 & x \\ 0 & 1
+	\end{pmatrix}\begin{pmatrix}
+		a^{-1} & 1 \\ 0 & 1
+	\end{pmatrix} = \begin{pmatrix}
+		1 & ax \\ 0 & 1
+	\end{pmatrix}\]
+	and the fact that $a \leftrightarrow (x\mapsto\theta(ax))$ is a bijection between nontrivial characters of $F^\times$ and $F^\times$, we get the claim.
 \end{proof}
 
 So if $V$ is irreducible, either $V(N)=0$, so that $N$ acts trivially on $V$ and we just get a character of $F^\times$, or $V(N)=V$. In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by the above Lemma and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension. In fact there is only one such $V$, and we have more specifically:
