@@ -123,6 +123,12 @@ Let $V$ be a smooth representation of $G$. In the preceding subsections, we defi
     Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. By Corollary \ref{exact}, the Jacquet functor is exact.
 \end{defn}
 
+If $V$ is a representation of $G$, and $\chi$ is a character of $T$, then we have by Frobenius Reciprocity that
+\[\Hom_G(V, \Ind_B^G \chi) \cong \Hom_B(V, \chi)\]
+But since $\chi$ as a character $B$ has trivial $N$-action, maps $V\to \chi$ factor through $V_N$, and we obtain a version of Frobenius reciprocity for the Jacquet module:
+\[\Hom_G(V, \Ind_B^G \chi)\cong \Hom_T(V_N, \chi)\]
+i.e. the Jacquet module is left adjoint to parabolic induction.
+
 In the classical setting of representations of $G=\GL_2(k)$ for a finite field $k$, we have the following dichotomy (where $B,T,N$ are the appropriate subgroups of $G$):
 \begin{lemma}
     Let $(\pi,V)$ be an irreducible representation of $G$. The following are equivalent:
@@ -146,7 +152,7 @@ Returning to $G=\GL_2(F)$, if $(\pi,V)$ is a smooth representation, the restrict
 \end{prop}
 \begin{proof}[Proof sketch]
     (2) implies (1) is a consequence of Frobenius reciprocity:
-    $$\Hom_G(\pi,\Ind \chi) = \Hom_B(\pi, \chi) = \Hom_T(\pi_N,\chi)$$ where the second equality follows from observing that any $B$-homomorphism $\pi \to \chi$ is trivial on $N$, so factors through $\pi_N$.
+    $$\Hom_G(\pi,\Ind \chi) = \Hom_T(\pi_N,\chi)$$
 
     Given (1), one shows by a technical argument that $V_N$ is finitely generated as a representation of $T$. An application of Zorn's lemma allows us to construct a maximal $T$-subspace $U$ of $V_N$, so that $V_N/U$ is a nonzero irreducible $T$-representation, and is thus a character $\chi$ by Schur's lemma. The above Frobenius reciprocity implies (2).
 \end{proof}
