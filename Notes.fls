@@ -1,6 +1,6 @@
-PWD c:\Users\Yiannis\Dropbox\PC\Documents\LSGNT\Beth Project\Unipotent-local-Langlands
+PWD c:\Users\Yiannis\Dropbox\PC\Documents\LSGNT\Beth Project\Unipotent-local-Langlands-2
 INPUT C:\Users\Yiannis\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Yiannis\Dropbox\PC\Documents\LSGNT\Beth Project\Unipotent-local-Langlands\Notes.tex
+INPUT c:\Users\Yiannis\Dropbox\PC\Documents\LSGNT\Beth Project\Unipotent-local-Langlands-2\Notes.tex
 OUTPUT Notes.log
 INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Yiannis\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls

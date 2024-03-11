@@ -103,29 +103,57 @@ Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V
 
 \subsection{Irreducible principal series representations}
 
-Let $V$ be a smooth representation of $G$. By restriction this gives a representation of $B$, and so does the space of $N$-coinvariants $V_N=V/V(N)$, again because $N$ is normal in $B$. Then $V_N$ inherits a representation $\pi_N$ of $T=B/N$, and we call this the Jacquet module of $V$ at $N$. As shown before, the Jacquet functor $V \mapsto V_N$ is exact.
+Let $V$ be a smooth representation of $G$. In the preceding subsections, we defined the quotient $V_N =V/V(N)$, called the $N$-coinvariants of $V$. As in Lemma \ref{coinvariants}, this is a representation of $B$ (as $N \lhd B$). As $N$ acts trivially on $V_N$, $V_N$ inherits the structure of a representation of $T=B/N$.
 
-Parallel to the classical finite field setting, we want to study when $V$ arises from parabolic induction. We have the analogous result:
+\begin{defn}
+    Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. By Corollary \ref{exact}, the Jacquet functor is exact.
+\end{defn}
+
+In the classical setting of representations of $G=\GL_2(k)$ for a finite field $k$, we have the following dichotomy (where $B,T,N$ are the appropriate subgroups of $G$):
+\begin{lemma}
+    Let $(\pi,V)$ be an irreducible representation of $G$. The following are equivalent:
+    \begin{enumerate}
+        \item $\pi$ contains the trivial character of $N$
+        \item $\pi$ is isomorphic to a $G$-subrepresentation of $\Ind_B^G \chi$ for some character $\chi$ of $T$ inflated to $B$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    Lemma 6.3 of \cite{BH1}.
+\end{proof}
+
+Returning to $G=\GL_2(F)$, if $(\pi,V)$ is a smooth representation, the restriction to $N$ is no longer necessarily semisimple because $F$ is of infinite order. We instead replace the condition that $\pi |_N$ contains the trivial character of $N$ with the condition that $N$ acts trivially on some nonzero quotient of $V$ (which is an equivalent condition in the finite field case). This is measured by the Jacquet module $V_N$. There is the analogous dichotomy which tells us that principal series representations can be identified as the irreducible smooth representations of $G$ with nonzero Jacquet module: 
 
 \begin{prop}
-    The following are equivalent:
-    \begin{itemize}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. The following are equivalent:
+    \begin{enumerate}
         \item $V_N \neq 0$
         \item $\pi$ is isomorphic to a $G$-subrepresentation of $\Ind_B^G \chi$ for some character $\chi$ of $T$ inflated to $B$.
-    \end{itemize}
+    \end{enumerate}
 \end{prop}
-\begin{proof}
-    (2) implies (1) comes from Frobenius reciprocity:
-    $$\Hom_G(\pi,\Ind \chi) = \Hom_B(\pi, \chi) = \Hom_T(\pi_N,\chi)$$ where the second equality is due to any $B$-homomorphism $\pi \to \chi$ factoring through $\pi_N$ (because $\chi$ is trivial on $N$).
+\begin{proof}[Proof sketch]
+    (2) implies (1) is a consequence of Frobenius reciprocity:
+    $$\Hom_G(\pi,\Ind \chi) = \Hom_B(\pi, \chi) = \Hom_T(\pi_N,\chi)$$ where the second equality follows from observing that any $B$-homomorphism $\pi \to \chi$ is trivial on $N$, so factors through $\pi_N$.
 
-    Given (1), one shows by a technical argument that $V_N$ is finitely generated as a representation of $T$. An application of Zorn's lemma allows us to construct a maximal $T$-subspace $U$ of $V_N$ so that $V_N/U$ is an irreducible $T$-representation and is thus a character (Schur's lemma) $\chi$. Frobenius reciprocity implies the result.
+    Given (1), one shows by a technical argument that $V_N$ is finitely generated as a representation of $T$. An application of Zorn's lemma allows us to construct a maximal $T$-subspace $U$ of $V_N$, so that $V_N/U$ is a nonzero irreducible $T$-representation, and is thus a character $\chi$ by Schur's lemma. The above Frobenius reciprocity implies (2).
 \end{proof}
+
 \begin{rem}
-    The same proof holds for the finite field case (noting the notion of having a subrepresentation where $N$ acts trivially is the same as having a nonzero quotient where $N$ acts trivially). The proof that (1) implies (2) bypasses the technical details because $V_N$ as a representation of $T$ obviously admits an irreducible quotient as $V_N$ is finite dimensional.
+    The same proof holds for the finite field case, where we bypass the technical details in showing (1) implies (2) because any representation of the finite group $T$ admits an irreducible quotient.
 \end{rem}
+
 \begin{rem}
-    In the general case we ask for a nonzero quotient of $V$ on which $N$ acts trivially as opposed to having a subrepresentation, because one can show in this latter case that all we get are characters $\pi = \phi \circ \det$ for some character $\phi$ of $F^\times$. In fact any finite dimensional smooth representation is of this form. The difference with the finite field case is that smoothness tells us that if $v\in V$ is fixed by $N$, it is also fixed by an open compact subgroup of $G$. Over a finite field, $N$ is open, but in general it is not and we fix $v$ by too much (all of $\SL_2$).
+    We ask for a nonzero Jacquet module $V_N$ rather than a trivial $N$-subrepresentation of $V$ because of the following fact:
 \end{rem}
+
+\begin{lemma}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$ with a nonzero vector $v\in V$ fixed by $N$. Then $\pi = \phi \circ \det$, for some character $\phi$ of $F^\times$. In particular, $\pi$ is one dimensional.
+\end{lemma}
+\begin{proof}[Proof sketch]
+    The vector $v$ is fixed by $N$, but also by a compact open subgroup $K$ of $G$ by smoothness. As we are working with $F$ a nonarchimedean local field (as opposed to a finite field), this implies $K$ contains a unipotent lower triangular matrix, and one shows that $v$ is fixed by $\mathrm{SL}_2(F)$. Thus $\pi$ factors through $\det$.
+\end{proof}
+
+
+
 
 We restrict our attention to principal series representations and want to understand how $\Ind_B^G \chi$ decomposes into irreducible $G$-representations. As mentioned earlier, we will first study how they decompose as representations of $B$ or even $M$. 
 
