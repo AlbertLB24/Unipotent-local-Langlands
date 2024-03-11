@@ -96,7 +96,9 @@ So if $V$ is irreducible, either $V(N)=0$, so that $N$ acts trivially on $V$ and
     \end{itemize}
 \end{thm}
 \begin{proof}
-    Corollary 8.3 \cite{BH1}.
+    If $V(N) = 0$ then $N$ acts trivially on $V$, and $V$ is a representation of $M/N \cong F^\times$. Hence by Schur's lemma, it's one-dimensional and we're in the first case.
+    
+    If $V(N) \not= 0$ then $V(N) = V$ and $V_N = 0$. Hence $V_\theta \not= 0$ for all nontrivial characters $\theta$, and $\dim V = \infty$. The following theorem implies that $V = V(N)$ is isomorphic to $c\mathrm{-Ind}_N^M V_\theta$, which is a direct sum of copies of $c\mathrm{-Ind}_N^M \theta$. Since it is irreducible, we must have $V\cong c\mathrm{-Ind}_N^M \theta$. 
 \end{proof}
 
 This itself follows from the following theorem. To compare $V$ and $c\mathrm{-Ind}_N^M \theta$, it is more natural to compare $V$ and $\mathrm{Ind}_N^M V_\theta$. By Frobenius reciprocity,
