@@ -39,7 +39,7 @@ The following is a useful equivalent definition of $V(\theta)$:
     \cite{BH1} Lemma 8.1.
 \end{proof}
 
-\begin{cor}
+\begin{cor}\label{exact}
     The functor $V \mapsto V_\theta$ from representations of $N$ to complex vector spaces is exact.
 \end{cor}
 \begin{proof}
@@ -66,7 +66,7 @@ The following is a useful equivalent definition of $V(\theta)$:
 
 Now we consider $V$ an irreducible smooth representation of $M$. 
 
-\begin{lemma}
+\begin{lemma}\label{coinvariants}
     The subspace $V(N) \leq V$ is a representation of $M$, and so $V_N$ is as well. The $V_\theta$ are conjugate under $M$ (so in particular are not representations of $M$). 
 \end{lemma}
 \begin{proof}
@@ -92,7 +92,7 @@ $$\Hom_N(V,V_\theta) \cong \Hom_M(V,\mathrm{Ind}_N^M V_\theta).$$
 Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V_\theta$.
 
 \begin{thm}\label{mirabolic}
-    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. Moreover, this compact induction is an irreducible representation of $M$.
+    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. The smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. As mentioned earlier, it is infinite dimensional.
 \end{thm}
 \begin{proof}
     Theorem 8.3 and Corollary 8.2 of \cite{BH1}.
@@ -153,90 +153,105 @@ Returning to $G=\GL_2(F)$, if $(\pi,V)$ is a smooth representation, the restrict
 \end{proof}
 
 
+Once again, let $\chi$ be a character of $T$ and let $(\Sigma,X)$ denote $\Ind_B^G \chi$. We want to study how $X$ decomposes into irreducible $G$-representations. As mentioned earlier, we will begin by studying their decompositions over $B$ or even $M$. 
 
+To begin with, $X$ will never be irreducible over $B$ because we always have the canonical $B$-homomorphism $\Sigma \to \chi$, given by sending $f \mapsto f(1) \in \CC$. So we have an exact sequence of $B$-representations
+$$\xymatrix{0 \ar[r] & V \ar[r] & X \ar[r] & \CC \ar[r] & 0,}$$
+where $V=\{f \in X  \mid f(1)=0\}$, and $B$ acts on $\CC$ via $\chi$. Now we want to understand how $V$ decomposes over $B$. We have another exact sequence of $B$-representations,
+$$\xymatrix{0 \ar[r] & V(N) \ar[r] & V \ar[r] & V_N \ar[r] & 0,}$$
+so we reduce to studying $V(N)$ and $V_N$. We will show that $V(N)$ is irreducible over $B$ (and even over $M$), while $V_N$ will be determined by the Restriction-Induction lemma. 
 
-We restrict our attention to principal series representations and want to understand how $\Ind_B^G \chi$ decomposes into irreducible $G$-representations. As mentioned earlier, we will first study how they decompose as representations of $B$ or even $M$. 
+%(which generally treats the exact sequence obtained by applying the Jacquet functor to the first exact sequence, where we may replace $\chi$ by any smooth representation $\sigma$ of $T$).
 
-These induced representations will never be irreducible over $B$ because we always have the canonical $B$-homomorphism $X=\Ind_B^G \chi \to \chi$ given by sending $f \mapsto f(1) \in \CC$. So we have an exact sequence of $B$-representations
-$$\xymatrix{0 \ar[r] & V \ar[r] & X \ar[r] & \CC \ar[r] & 0}$$
-where $V=\{f \in X \chi : f(1)=0\}$, with $B$ acting on $\CC$ via $\chi$. Now we want to understand how $V$ decomposes. We have another exact sequence of $B$-representations,
-$$\xymatrix{0 \ar[r] & V(N) \ar[r] & V \ar[r] & V_N \ar[r] & 0}$$
-so we reduce to studying $V(N)$ and $V_N$. We will show that $V(N)$ is irreducible over $B$ (and even over $M$), while $V_N$ will be determined by the Restriction-Induction lemma (which generally treats the exact sequence obtained by applying the Jacquet functor to the first exact sequence, where we may replace $\chi$ by any smooth representation $\sigma$ of $T$).
-
-Firstly we want to understand $V=\{f \in X:f(1)=0\}$ better.
+The following lemma makes the structure of $V$ more apparent.
 
 \begin{lemma}\label{reduce to N}
-    For $V$ as above, the map 
+    Let $V=\{f \in X:f(1)=0\}$. The map 
     \begin{equation*}
         \begin{split}
             V &\to C_c^\infty(N) \\
             f(-) &\mapsto f(w-) 
         \end{split}
     \end{equation*}
-    is an $N$-isomorphism, where $w=\begin{psmallmatrix}
+    is an $N$-isomorphism (with $N$ acting by right translation on either side), where $w=\begin{psmallmatrix}
         0&1\\1&0
-    \end{psmallmatrix}$
+    \end{psmallmatrix}$.
 \end{lemma}
 \begin{proof}
-    We have the decomposition $G=B \sqcup BwN$. Since $f(1)=0$ and $f$ is induced from $B$ we must have that $f$ is supported on $BwN$. $G$-smoothness of $f$ implies that $f(1)=0$ is fixed by right translation by some compact open subgroup $K\leq G$. This will contain $\begin{psmallmatrix}
-        1&0\\\pi^n \mathcal O &0
+    We have the Bruhat decomposition $G=B \sqcup BwN$. Since $f(1)=0$, and $f$ is induced from $B$, we must have that $f$ is supported on $BwN$. $G$-smoothness of $f$ implies that $f$ is also zero on some compact open $K \leq G$. This will contain $\begin{psmallmatrix}
+        1&0\\\varpi^n \mathcal O &1
     \end{psmallmatrix}$ for some $n$, so that $f$ vanishes on 
-    $$\begin{psmallmatrix}
+    $$\begin{pmatrix}
         1&0\\x&1
-    \end{psmallmatrix} \in Bw \begin{psmallmatrix}
+    \end{pmatrix} \in Bw \begin{pmatrix}
         1&x^{-1}\\0&1
-    \end{psmallmatrix}$$
-    for all $x \in \pi^n \mathcal O$. Thus $f(w-)$ is supported on $\begin{psmallmatrix}
+    \end{pmatrix}$$
+    for all $x \in \varpi^n \mathcal O$. Thus $f(w-)$ is supported on $\begin{psmallmatrix}
         1&y\\0&1
-    \end{psmallmatrix} \in N$ with $v(y) > -n$ (so $y \in \pi^{-n}\mathcal O$). $G$-smoothness of $f$ also implies that $f(w-)$ is $N$-smooth, and that the above map is an $N$-homomorphism. The decomposition $G=B \sqcup BwB$ implies that it is in fact an isomorphism.
+    \end{psmallmatrix} \in N$ with $v(y) > -n$ and so is compactly supported. $G$-smoothness of $f$ also implies that $f(w-)$ is $N$-smooth. Since $f$ is induced from $B$ and is supported on $BwN$, the map is injective. Conversely, any $g \in C_c^\infty(N)$ determines $f \in \Ind_B^G \chi$ such that $f(w-)=g$ and $f(B)=0$.
 \end{proof}
 
 \begin{prop}
-    For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$).
+    For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$). Moreover, $V(N)$ is infinite dimensional.
 \end{prop}
 \begin{proof}
-    By the above lemma we can identify $V \cong C_c^\infty(N)$ with $M$ acting via right translation on $V$. This gives the structure of a $M$-representation on $C_c^\infty(N)$. We can calculate it explicitly (but we won't need it) where
-    $$f(bw\begin{psmallmatrix}
+    The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by the same theorem.
+
+    By the above lemma we can identify $V \cong C_c^\infty(N)$ as $N$-representations. But $M$ also acts via right translation on $V$ (since $BwB=BwN=BwM$), which gives the structure of a $M$-representation on $C_c^\infty(N)$. We can calculate it explicitly (but we won't need it), where
+    $$f\left(bw\begin{pmatrix}
         1&x\\0&1
-    \end{psmallmatrix}\begin{psmallmatrix}
+    \end{pmatrix}\begin{pmatrix}
         a&0\\0&1
-    \end{psmallmatrix}) = f(b \begin{psmallmatrix}
+    \end{pmatrix}\right) = f\left(b \begin{pmatrix}
         1&0\\0&a
-    \end{psmallmatrix}w\begin{psmallmatrix}
+    \end{pmatrix}w\begin{pmatrix}
         1&a^{-1}x\\0&1
-    \end{psmallmatrix})$$
+    \end{pmatrix}\right)$$
     tells us that the corresponding $M=F^\times N$ action on $C_c^\infty(N)$ is the composite of right translation by $N$ with the action 
-    $$a\phi \begin{psmallmatrix}
+    $$a\cdot \phi \begin{pmatrix}
         1&x\\0&1
-    \end{psmallmatrix} = \chi_2(a) \phi \begin{psmallmatrix}
+    \end{pmatrix} = \chi_2(a) \phi \begin{pmatrix}
         1&a^{-1}x \\ 0&1
-    \end{psmallmatrix}$$
+    \end{pmatrix}$$ of $a \in F^\times$.
 
-    So now we may consider $V=C_c^\infty(N)$. The benefit is that for this representation, the spaces of coinvariants of characters of $N$ are very simple. In particular, the map $f \mapsto \theta f$ is a linear automorphism of $C_c^\infty(N)$ taking $V(N)$ to $V(\theta)$ since $$n \cdot f - f \mapsto \theta (n \cdot f) - \theta f = \theta(n)^{-1} n \cdot (\theta f) - \theta f \in V(\theta).$$
-    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterisation of $V(N)$ as the zeros of some integral, or from the Restriction-Induction lemma to follow).
-
-    But then Theorem \ref{mirabolic} implies that for our $M$-representation $V$, we have $V(N) \cong c-\mathrm{Ind}_N^M V_\theta$ where $V_\theta \cong \theta$ as it is one dimensional. This is irreducible as a $M$-representation by the same Theorem.
+    So now we may consider $V=C_c^\infty(N)$. The benefit is that for this representation, the spaces of coinvariants of characters $\theta$ of $N$ are very simple. In particular, the map $f \mapsto \theta f$ is a linear automorphism of $C_c^\infty(N)$ taking $V(N)$ to $V(\theta)$, since $$n \cdot f - f \mapsto \theta (n \cdot f) - \theta f = \theta(n)^{-1} n \cdot (\theta f) - \theta f \in V(\theta).$$
+    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterisation of $V(N)$ as the zeros of some integral (Lemma \ref{criteria N}), or from the Restriction-Induction lemma to follow). The result follows from Theorem \ref{mirabolic}.
 \end{proof}
 
-We turn our attention to $V_N$ where we recall $V$ fits in the exact sequence
-$$\xymatrix{0 \ar[r] & V \ar[r] & X = \mathrm{Ind}_B^G \chi \ar[rr]^{f \mapsto f(1)} && \chi \ar[r] & 0}$$ of smooth representations of $B$. Since the Jacquet functor is exact, we get the exact sequence
+We turn our attention to the Jacquet module $V_N$. Recall $V$ fits in the exact sequence
+$$\xymatrix{0 \ar[r] & V \ar[r] & X = \mathrm{Ind}_B^G \chi \ar[rr]^{f \mapsto f(1)} && \CC \ar[r] & 0}$$ of smooth representations of $B$, where $B$ acts via $\chi$ on $\CC$. Since the Jacquet functor is exact, we get the exact sequence
 
-$$\xymatrix{0 \ar[r] & V_N \ar[r] & X_N \ar[r] & \chi \ar[r] & 0}$$ of $T$-representations. We can say in more generality,
+$$\xymatrix{0 \ar[r] & V_N \ar[r] & X_N \ar[r] & \CC \ar[r] & 0}$$ of $T$-representations. The following lemma determines the structure of $V_N$ as a $T$-representation. This can be stated in more generality:
 
-\begin{lemma}[Restriction-Induction Lemma]
+\begin{lemma}[Restriction-Induction lemma]
     Let $(\sigma, U)$ be a smooth representation of $T$ and $(\Sigma, X) = \mathrm{Ind}_B^G \sigma$. Then there is an exact sequence of smooth $T$ representations:
-    $$\xymatrix{0 \ar[r] & \sigma^w \otimes \delta_B^{-1} \ar[r] & \Sigma_N \ar[r] & \sigma \ar[r] & 0}$$
+    $$\xymatrix{0 \ar[r] & \sigma^w \otimes \delta_B^{-1} \ar[r] & \Sigma_N \ar[r] & \sigma \ar[r] & 0.}$$
+    Here, $\sigma^w(t) := \sigma(wtw)$ for $w=\begin{psmallmatrix}
+        0&1\\1&0
+    \end{psmallmatrix}$, so that if $\sigma$ is the character $\chi_1 \otimes \chi_2$ of $T$, then $\sigma^w = \chi_2\otimes \chi_1$.
 \end{lemma}
 \begin{proof}
-    The proof of Lemma \ref{reduce to N} generalises to show that the vector space $V$ is isomorphic to the space $\mathcal S$ of smooth compactly supported functions $N \to U$ by identifying $f$ with $f(w-)$.
+    The proof of Lemma \ref{reduce to N} generalises to show that the vector space $V = \{f \in X \mid f(1)=0\}$ is isomorphic, as $N$-representations, to the space $\mathcal S$ of smooth compactly supported functions $N \to U$, by identifying $f$ with $f(w-)$.
+
+
 
     We can define a map $\mathcal S \to U$ by 
-    $$g=f(w-) \mapsto \int_N g(n)=f(wn) dn$$ where this integral is finite since $g$ is compactly supported. By Lemma \ref{criteria N}, this induces an isomorphism $\mathcal S_N \cong U$.
+    $$g=f(w-) \mapsto \int_N f(wn) dn,$$ where this integral is finite since $g$ is compactly supported. By Lemma \ref{criteria N}, this induces an isomorphism $\mathcal S_N \cong U$.
 
-    The $B$-representation structure on $\mathcal S$ coming from $V$ is by right translation, where $b=sm \in TN$ acts by
-    $$f(wnsm) = f(wss^{-1}nsm) = f(wswws^{-1}nsm) = \sigma(s^w) f(ws^{-1}nsm)$$
-    where $s^{-1}nsm \in N$. Under the isomorphism $\mathcal S_N \cong U$, this induces a $T$ representation structure on $U$ where $s \in T$ acts by 
-    $$s \cdot \int_N f(wn) dn = \sigma(s^w) \int_N f(w s^{-1}ns) dn = \sigma(s^w) |\frac{s_1}{s_2}| \int_N f(wn) dn$$ which is $\sigma^w \otimes \delta_B^{-1}$.
+
+    Now $V$ also carries the structure of a $B$-representation as well, since $BwB=BwN$. We can repeat the same calculation as in the previous proposition, replacing $F^\times$ with $T\cong F^\times \times F^\times$, to compute the action of $B=TN$ on $\mathcal S$. As usual, $N$ acts via right translation. If $t=\begin{psmallmatrix}
+        t_1&0 \\0 & t_2
+    \end{psmallmatrix} \in T$, then for $\phi \in \mathcal S$, 
+    $$t\cdot \phi \begin{pmatrix}
+        1&x\\0&1
+    \end{pmatrix} = \sigma^w(t) \phi \begin{pmatrix}
+        1&\frac{t_2}{t_1}x \\ 0&1
+    \end{pmatrix}.$$
+
+    Thus the $T$-representation structure on $U \cong \mathcal S_N \cong V_N$ is given by 
+
+    $$t \cdot \int_N f(wn)dn = \sigma^w(t) \left| \frac{t_1}{t_2} \right| \int_N f(wn)dn,$$
+    which is $\sigma^w \otimes \delta_B^{-1}$.
 \end{proof}
 
 \begin{cor}
@@ -244,13 +259,13 @@ $$\xymatrix{0 \ar[r] & V_N \ar[r] & X_N \ar[r] & \chi \ar[r] & 0}$$ of $T$-repre
 \end{cor}
 \begin{proof}
     This follows from the exact sequences
-    $$\xymatrix{0 \ar[r] & V \ar[r] & \mathrm{Ind}_B^G \chi \ar[r] & \chi \ar[r] & 0}$$
+    $$\xymatrix{0 \ar[r] & V \ar[r] & \mathrm{Ind}_B^G \CC \ar[r] & \chi \ar[r] & 0}$$
     and
     $$\xymatrix{0 \ar[r] & V(N) \ar[r] & V \ar[r] & V_N \ar[r] & 0}$$
-    where we saw that $V(N)$ is irreducible (and infinite dimensional by Theorem \ref{inf dim}), and $V_N \cong \chi^w \otimes \delta_B^{-1}$.
+    where we saw that $V(N)$ is irreducible and infinite dimensional, and $V_N \cong \chi^w \otimes \delta_B^{-1}$.
 \end{proof}
 
-So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$ representations, and we want to understand its decomposition into $G$ representations. Our goal is to prove the following
+So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$-representations, and we want to understand its decomposition into $G$-representations. Our goal is to prove the following:
 
 \begin{thm}[Irreducibility Criterion]\label{criterion}
     Let $\chi = \chi_1 \otimes \chi_2$ be a character of $T$ and let $X = \mathrm{Ind}_B^G \chi$.
