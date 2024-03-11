@@ -58,3 +58,42 @@ $$K\longrightarrow\varprojlim K/N$$
 is a topological isomorphism where $N$ ranges over the normal open subgroups, and the implicit maps are the obvious ones.
 
 \subsection{Continuous Characters of Local Fields}
+\subsection{Smooth representations of locally profinite groups}
+
+Let $G$ be a locally profinite group. A representation of $G$ is a pair $(\pi, V)$ where $V$ is a complex vector space (not necessarily finite-dimensional) and $\pi: G \to \GL(V)$ is a homomorphism.
+\begin{defn}
+	A representation $V$ of $G$ is smooth if for $v\in V$ there exists a compact-open subgroup $K\subseteq G$ such that $kv = v$ for all $k\in K$ (i.e. $v\in V^K$). We say $V$ is admissible if $V^K$ is finite-dimensional for all compact-open $K$.
+\end{defn}
+
+Let us define induced representations:
+\begin{defn}\label{induction}
+	Let $G$ be a locally profinite group, $H\subseteq G$ a closed subgroup, and $W$ a smooth representation of $H$. We define the induced representation as the space of functions $f: G\to W$ satisfying
+	\begin{enumerate}
+		\item $f(hg) = h\cdot f(g)$ for all $h\in H, g\in G$
+		\item there is a compact open subgroup $K\subseteq G$ (depending on $f$) such that $f(gk) = f(g)$ for all $g\in G, k\in K$.
+	\end{enumerate}
+	We let $G$ act on this space via $(g\cdot f)(x) = f(xg)$. This is a smooth representation of $G$, denoted by $\Ind_H^G W$.
+\end{defn}
+This construction satisfies the following important universal property:
+\begin{thm}[Frobenius reciprocity]
+	Let $V$ be a smooth representation of $G$, and $W$ a smooth representation of $H$. Then there's a natural bijection
+	\begin{align*}
+		\Hom_G(V, \Ind_H^G W)&\cong \Hom_H(V, W)\\
+		\varphi &\mapsto \alpha_W \circ \varphi
+	\end{align*}
+	where $\alpha_W: \Ind_H^G W \to W$ is the canonical map $\alpha_W(f) = f(1)$.
+\end{thm}
+
+There is also a different variant of induction, called compact induction:
+\begin{defn}
+	Let $G$ be a locally profinite group, $H$ a closed subgroup, and $W$ a smooth representation of $H$. Consider the space of functions $f: G\to W$ that satisfy (1) and (2) in Definition \ref{induction}, and are also compactly supported mod $H$, i.e. the support $\mathrm{supp} f\subseteq H\backslash G$ is compact. The group $G$ also acts on this space by right translations, so we get a representation of $G$, denoted by $c-\Ind_H^G W$.
+\end{defn}
+This construction is mainly of interest in the case when $H$ is open in $G$. In this case, it satisfies a version of Frobenius reciprocity:
+\begin{thm}
+	Let $H\subseteq G$ be open, $W$ a smooth representation of $H$ and $V$ a smooth representation of $G$. We have a natural bijection
+	\begin{align*}
+		\Hom_G(c-\Ind_H^G W, V)&\cong \Hom_H(W, V)\\
+		\varphi &\mapsto \varphi \circ \alpha^c_W 
+	\end{align*}
+	Where $\alpha^c_W: W\to c-\Ind_H^G W$ is the map $w\mapsto f_w$ where $f_w$ is supported in $H$ and satisfies $f_w(h) = hw$.
+\end{thm}
