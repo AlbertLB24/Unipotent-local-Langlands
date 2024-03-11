@@ -254,7 +254,7 @@ $$\xymatrix{0 \ar[r] & V_N \ar[r] & X_N \ar[r] & \CC \ar[r] & 0}$$ of $T$-repres
     which is $\sigma^w \otimes \delta_B^{-1}$.
 \end{proof}
 
-\begin{cor}
+\begin{cor}\label{length 3}
     As a representation of $B$ or $M$, $\mathrm{Ind}_B^G \chi$ has composition length 3. Two of the factors have dimension 1, and the other is infinite dimensional.
 \end{cor}
 \begin{proof}
@@ -270,7 +270,7 @@ So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$-rep
 \begin{thm}[Irreducibility Criterion]\label{criterion}
     Let $\chi = \chi_1 \otimes \chi_2$ be a character of $T$ and let $X = \mathrm{Ind}_B^G \chi$.
     \begin{enumerate}
-        \item $X$ is irreducible if and only if $\chi_1\chi_2^{-1}$ is either the trivial character of $F^\times$, or the character $x \mapsto |x|^2$ of $F^\times$.
+        \item The representation $X$ of $G$ is irreducible if and only if $\chi_1\chi_2^{-1}$ is either the trivial character of $F^\times$, or the character $x \mapsto |x|^2$ of $F^\times$.
         \item Suppose $X$ is reducible, then \begin{itemize}
             \item the $G$-composition length of $X$ is 2
             \item one factor has dimension 1, the other is infinite dimensional
@@ -300,9 +300,9 @@ We make some comments in preparation for the proof. By the above Corollary, if $
 \begin{proof}
     (1) implies (2): since induction commutes with twisting we may assume $\chi_1=\chi_2=1$, then the nonzero constant function spans a 1-dimensional $G$-subspace (not just $N$-subspace) of $X = \mathrm{Ind}_B^G 1$.
 
-    (2) implies (1): suppose this subspace is spanned by $f$. $N$ acts by right translation as a character. We cannot have $f \in V$ ($f(1)=0$) else we earlier saw that $f$ would then have support in some $BwN_0$ for $N_0 \leq N$ open compact, and this is not closed under multiplication by $N$.
+    (2) implies (1): suppose this subspace is spanned by $f$. The group $N$ acts as a character on this subspace via right translation. We cannot have $f \in V$ (meaning $f(1)=0$) because we saw earlier that $f$ would then have support in some $BwN_0$ for $N_0 \leq N$ open compact, and this is not closed under multiplication by $N$.
 
-    So $f \not\in V$ ($f(1) \neq 0$) and so its image spans $X/V \cong \CC$ on which $N$ acts trivially (since we inflate $\chi$ to be trivial on $N$). Thus $N$ fixes $f$ under right translation. $f$ is also fixed under right translation by some compact open of $G$, so for sufficiently large $|x|$ we have
+    So $f \not\in V$ and therefore its image spans $X/V \cong \CC$. On this quotient, $N$ acts trivially because $\chi$ was inflated from $B/N=T$. Thus $f$ is in fact fixed by $N$ under right translation. But $f$ is also fixed under right translation by some compact open of $G$, so for sufficiently large $|x|$ we have
     \begin{equation*}
         \begin{split}
             f(w) = f\left(w \begin{psmallmatrix}
@@ -322,15 +322,22 @@ We make some comments in preparation for the proof. By the above Corollary, if $
             &= \chi_1(-1) \left( \chi_1^{-1}\chi_2(x)\right) f(1)
         \end{split}
     \end{equation*}
-    For this to hold for all $|x|$ sufficiently large, it follows that we must have $\chi_1=\chi_2$ (if $\chi_1(y) \neq \chi_2(y)$ then $\chi_1(xy) \neq \chi_2(xy)$ for all sufficiently large $x$, but then $xy$ is also large). The uniqueness of the 1-dimensional subspace comes from the fact that it must span $X/V \cong \CC$. 
+
+    This tells us that $\chi_1^{-1}\chi_2(x)$ is constant for $x$ sufficiently large. Since this is also true for $x^2$, we see that $\chi_1(x)=\chi_2(x)$ for $x$ sufficiently large. Now for any $y \in F^\times$, we can pick $x$ large enough so that $\chi_1(x)=\chi_2(y)$ and $\chi_1(xy)=\chi_2(xy)$, from which we deduce that $\chi_1=\chi_2$. 
+    
+    The uniqueness of the 1-dimensional subspace comes from the fact that it must span $X/V \cong \CC$. 
 \end{proof}
 
 \begin{proof}[Proof of Irreducibility Criterion]
-    Assume that $X$ is reducible and we are in the case that $X$ has a finite dimensional $G$-subspace. Then it has a 1-dimensional $N$-subspace $L$, which is also a $G$ subspace by the above Proposition with $G$ acting via $\phi \circ \det$, where $\phi=chi_1=\chi_2$. Since $L \cap V =0$, we see that $Y=X/L \cong V$ as $B$-representations. We need to show $X$ has $G$-length 2. By the previous corollary it has length at most 3. We know that $V$ has $B$-length 2 with a 1-dimensional quotient $V_N$. Thus if $Y$ had $G$-length 2, then the $B$-factors of $V$ are also $G$-factors, so that $G$ must act on $V_N$, necessarily by a character $\phi' \circ \det$ (see 9.2 Exercise 2). But this is impossible because $B \leq G$ acts by $\phi \delta_B^{-1}$ by restriction-induction, and this does not factor through $\det$ on $B$. So we must have that $X$ has $G$-length 2.
+    Assume that $X$ is reducible and we are in the case that $X$ has a finite dimensional $G$-subspace. Then it has a 1-dimensional $N$-subspace $L$ because $N$ is abelian, which is also a $G$-subspace by the above proposition. Since $G$ must act via a character on $L$, it factors as $\phi \circ \det$, where $\chi_1=\phi=\chi_2$. 
 
-    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem tells us $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. The result follows from computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$.
+    Let $Y$ be the $G$-representation $X/L$. Since $L$ spans the vector space $X/V$, the $B$-homomorphism \\${V \hookrightarrow X \to X/L}$ is surjective. It is injective since $L \cap V = 0$. Thus $Y \cong V$ as $B$-representations.
 
-    The converse direction to (1) follows from the previous Proposition.
+    We need to show that $X$ has $G$-length 2. By the Corollary \ref{length 3} it has length at most 3. We know that $V$ has $B$-length 2 with a 1-dimensional quotient $V_N$. If $Y$ had $G$-length 2, then the $B$-factors of $V$ are also $G$-factors, so that $G$ must act on $V_N$, necessarily by a character $\phi' \circ \det$. But this is impossible because $B \leq G$ acts on $V_N$ by $\phi \delta_B^{-1}$ by Restriction-Induction, and this does not factor through $\det$ on $B$. So we must have that $Y$ is irreducible over $G$ and so $X$ has $G$-length 2.
+
+    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem (Theorem 3.5 \cite{BH1}) tells us that $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. Computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$ gives $\chi_1\chi_2^{-1} = |\cdot|^2$.
+
+    The converse direction to (1) follows from the previous proposition.
 \end{proof}
 
 
@@ -345,33 +352,32 @@ Now that we've seen how parabolically induced representations decompose into irr
 \begin{proof}
     Frobenius reciprocity tells us
     $$\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \xi) \cong \Hom_T((\Ind \chi)_N, \xi).$$
-    From restriction-induction we have
+    From the Restriction-Induction lemma we have
     $$\xymatrix{0 \ar[r] & \chi^w \delta_B^{-1} \ar[r] & (\Ind \chi)_N \ar[r] & \chi \ar[r] & 0.}$$
     In the case $\chi \neq \chi^w \delta_B^{-1}$ the sequence splits and the result follows. If $\chi = \chi^w \delta_B^{-1}$ then $\chi_1\chi_2^{-1} (x) = |x|$ so $\Ind \chi$ is irreducible and the result still follows.
 \end{proof}
 
 \begin{rem}
-Hence, in the case $\Ind \chi$ is irreducible, we have $\Ind \chi \cong \Ind \chi^w \delta_B^{-1}$.
-
-And in the case $\Ind \chi$ is reducible, it is not semisimple, else the Hom space would be 2-dimensional.
+In the case that $\Ind \chi$ is irreducible, we deduce that $\Ind \chi \cong \Ind \chi^w \delta_B^{-1}$. And in the case $\Ind \chi$ is reducible, it is not semisimple, else $\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \chi)$ would have dimension strictly greater than 1.
 \end{rem}
 
-We can be more explicit in the reducible case. One can check that the conditions in the Irreducibility Criterion of reducibility are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$. Untwisting, we may as well assume $\phi=1$.
+We can be more explicit in the reducible case. One can check that the conditions for reducibility in the Irreducibility Criterion are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$. Untwisting, we may as well assume $\phi=1$ in what follows.
 
 \begin{defn}
-    The Steinberg representation is defined by the exact sequence
-    $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0}$$ which is an infinite dimensional irreducible representation with Jacquet module $(\mathrm{St}_G)_N \cong \delta_B^{-1}$ by restriction-induction. If $\chi =\phi 1_T$ we would instead get a twist of Steinberg, $\phi \mathrm{St}_G$.
+    The Steinberg representation of $G$ is defined by the exact sequence
+    $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0,}$$ and is an infinite dimensional irreducible smooth representation. By Restriction-Induction, the Jacquet module is $(\mathrm{St}_G)_N \cong \delta_B^{-1}$. The representations $\phi \mathrm{St}_G$ are called `twists of Steinberg' or `special representations'.
 \end{defn}
 
-The case $\chi = \delta_B^{-1}$ can be dealt with by taking smooth duals (which is exact (Lemma 2.10 of Bushnell-Henniart) and preserves irreducibles (by checking on $V^K$)) to get 
-$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0}$$
-The Proposition applied to $\chi = 1$ then implies
+The case $\chi = \delta_B^{-1}$ can be dealt with by taking smooth duals (which is exact by \cite{BH1} Lemma 2.10) to get 
+$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0,}$$ where we use the Duality Theorem, \cite{BH1} Theorem 3.5. The Irreducibility Criterion implies that $\mathrm{St}_G^\vee$ is also irreducible, and in fact the previous proposition applied to $\chi=1, \xi = \delta_B^{-1}$ implies that
 $$\mathrm{St}_G \cong \mathrm{St}_G^\vee.$$
+% we can see irreducibility by prop 2.10 and using admissibility 
+% add our own duality thm?
 
 \begin{notn}
     Define normalised induction by
     $$\iota_B^G \sigma = \Ind_B^G (\delta_B^{-1/2} \otimes \sigma).$$
-    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$.
+    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (\cite{BH1} Theorem 3.5).
 \end{notn}
 
 \begin{thm}[Classification Theorem]\label{classify}
