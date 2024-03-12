@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex Notes"] 1710174908 "Notes.aux" "Notes.bbl" "Notes" 1710175042 0
+["bibtex Notes"] 1710257516 "Notes.aux" "Notes.bbl" "Notes" 1710257519 0
   "./references.bib" 1710161619 556 465673df491b3e3effd774c683d41696 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/bibtex/bst/amscls/amsalpha.bst" 1591020010 28675 71ba1b1ee8387ac88670b0ea0eb2399a ""
-  "Notes.aux" 1710175041 3576 7416f26d8447f40fdd889066bfa2e352 "pdflatex"
+  "Notes.aux" 1710257518 3858 e9a82c54e36f510b4b8bda9d94db19d2 "pdflatex"
   (generated)
   "Notes.bbl"
   "Notes.blg"
   (rewritten before read)
-["pdflatex"] 1710175040 "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" "Notes.pdf" "Notes" 1710175042 0
+["pdflatex"] 1710257516 "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" "Notes.pdf" "Notes" 1710257519 0
   "C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1696808663 82116 9c5728d1d3662e284c07c1325550ed71 ""
   "C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1654473921 11548 c76fb3c924b071dbff8f437a8a012d4e ""
   "C:/Users/Yiannis/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbm/dpi600/bbm10.pk" 1663208406 6984 8ff7f869ae2664fed78acfc5a56c2d3a ""
@@ -59,6 +59,7 @@
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti8.tfm" 1136765053 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/xypic/xyatip10.tfm" 1381018713 608 50246cc71b0635b0ba0a5c10a0bf4257 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/xypic/xybsql10.tfm" 1381018713 608 4db60f15ea23b4ec2d796c6d568a63fa ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/xypic/xybtip10.tfm" 1381018713 608 50246cc71b0635b0ba0a5c10a0bf4257 ""
@@ -80,13 +81,16 @@
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247593067 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247593066 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247593067 31809 8670ca339bf94e56da1fc21c80635e2a ""
+  "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247593067 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247593067 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247593067 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247593067 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247593066 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247593066 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247593067 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1247593066 35660 fb24af7afbadb71801619f1415838111 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1335362546 21098 d4aee7c0aac232caac5688b586b9363c ""
+  "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm7.pfb" 1335362546 21251 56705123063d7b34002d6b6e7142345e ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247593073 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247593073 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1247593073 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
@@ -188,14 +192,14 @@
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238465940 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/Yiannis/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "Notes.aux" 1710175041 3576 7416f26d8447f40fdd889066bfa2e352 "pdflatex"
-  "Notes.bbl" 1710174909 716 124beeb8d2eb55ccd395cb4530622844 "bibtex Notes"
-  "Notes.out" 1710175041 3198 1424ff15e19edad27b32a669fd396984 "pdflatex"
-  "Notes.tex" 1710175039 2975 5370a57dd9436fe5f7f23f21e2d42026 ""
+  "Notes.aux" 1710257518 3858 e9a82c54e36f510b4b8bda9d94db19d2 "pdflatex"
+  "Notes.bbl" 1710257516 716 124beeb8d2eb55ccd395cb4530622844 "bibtex Notes"
+  "Notes.out" 1710257518 3532 480bcc1a6a845bb17c0056abfdf332c5 "pdflatex"
+  "Notes.tex" 1710257513 3028 cc19c7361775ee181df59fe9fe044a40 ""
   "Section4.tex" 1710161619 16538 b6178036d9538fe162b473992ed05b9d ""
-  "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" 1710175039 2975 5370a57dd9436fe5f7f23f21e2d42026 ""
-  "principal_series.tex" 1710174906 29290 77cf3b5cd54d7045c1f8a78694625a34 ""
-  "section_one.tex" 1710161619 5292 6e14dca9a81dd3337f71b763b99c67fc ""
+  "c:/Users/Yiannis/Dropbox/PC/Documents/LSGNT/Beth Project/Unipotent-local-Langlands/Notes.tex" 1710257513 3028 cc19c7361775ee181df59fe9fe044a40 ""
+  "principal_series.tex" 1710243862 30577 9fd2b60361cfbeb3790fc3968c0dc480 ""
+  "section_one.tex" 1710248104 16494 4e8e66960b09a53e1d88cb179a4ab8ac ""
   (generated)
   "Notes.aux"
   "Notes.log"
