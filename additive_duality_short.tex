@@ -1,0 +1,17 @@
+We are now ready to give the classfication theorem for $\hat{F}$.
+
+\begin{thm}[Additive duality]
+    Let $\psi\in\hat{F}$ be a non-trivial character with level $d$. 
+    \begin{enumerate}
+        \item Let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$ and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
+        \item The map $a\mapsto a\psi$ induces an isomorphism $F\cong\hat{F}$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    For $1.$, it is clear that $a\psi$ is a character since if $x\in\pp^{d-\nu_F(a)}$, then $ax\in\pp^d$ so $a\psi(x)=1$ so $\pp^{d-\nu_F(a)}\subseteq\ker(a\psi)$ so the kernel is open. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$ so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu_F(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu_F(a)$.
+    For $2.$ the map $a\mapsto a\psi$ is clearly a homomorphism. To prove injectivity, suppose that $a\neq b$ but $a\psi=b\psi$. Then it follows that $x(a-b)\in\ker\psi$ for all $x\in F$. But since $a-b\neq 0$, then $\ker\psi=F$, a contradiction.
+
+    The proof of surjectivity is more involved. Let $\theta\in\hat{F}$ non-trivial, and let $l$ be the level of $\theta$. The idea of the proof is to construct inductively a sequence some $u_0,u_1,\ldots\in F$ such that $u_n\psi$ agrees with $\theta$ on $\pp^{l-n}$ and $u_{n+1}\equiv u_n\ (\mathrm{mod }\pp)$. More concretely, for any $u\in U_F$, the character $u\varpi^{d-l}\psi$ has level $l$, thus agreeing with $\theta$ at $\pp^l$, and any $u_0=u\varpi^{d-l}$ will do. To construct $u_1$, we note that given $u,u'\in U_F$, then $u\varpi^{d-l}\psi$ and $u\varpi^{d-l}\psi$ agree on $\pp^{l-1}$ if and only if $u\equiv u'\pmod{\pp}$, i.e. when $u'u^{-1}\in U_F^1$. Since $\kappa^{\times}\cong(\pp^{l-1}/\pp^l)^{\times}\cong U_F/U_F^1$ are cyclic of order $q-1$, there are $q-1$ non-trivial characters of $\pp^{l-1}$ trivial on $\pp^l$ and also $q-1$ characters of $\pp^{l-1}$ of the form $u\varpi^{d-l}\psi$ for $u\in U_F$. Then one of them, say $u_1\varpi^{d-l}\psi|_{\pp^{l-1}}$ equals $\theta|_{\pp^{l-1}}$. Note also that $u_0\equiv u_1\pmod{\pp^0}$.
+
+    This same idea can be iterated to find the sequence $\{u_n\}_{n\geq1}$ described above. Since this sequence is Cauchy and $F$ is complete, it converges to some $u\in F$ such that $u\varpi^{d-l}\psi=\theta$.
+\end{proof}

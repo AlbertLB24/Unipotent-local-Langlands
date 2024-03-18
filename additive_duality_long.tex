@@ -1,0 +1,44 @@
+\begin{lemma}
+    Let $\psi\in\hat{F}$ be a character of level $d$ and let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$ and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
+\end{lemma}
+\begin{proof}
+    It is clear that $a\psi$ is a character since if $x\in\pp^{d-\nu_F(a)}$, then $ax\in\pp^d$ so $a\psi(x)=1$ so $\pp^{d-\nu_F(a)}\subseteq\ker(a\psi)$ and the kernel is open. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$ so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu_F(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu_F(a)$. 
+\end{proof}
+
+We are now ready to give the classfication theorem for $\hat{F}$.
+
+\begin{thm}[Additive duality]\label{add_dual}
+    Let $\psi\in\hat{F}$ be character with level $d$. The map $a\mapsto a\psi$ induces an isomorphism $F\cong\hat{F}$. 
+\end{thm}
+
+The proof of surjectivity of the theorem requires an inductive step, which heavily relies on the following results.
+
+\begin{lemma}\label{lem_congruence}
+    Let $\psi\in\hat{F}$ be a character of level $d$ and let $u,u'\in U_F$ be two units of $F$. Then $u\psi$ coincides with $u'\psi$ on $\pp^{d-n}$ if and only if $u'u^{-1}\in U_F^{n}$.
+\end{lemma}
+\begin{proof}
+    Let $\alpha=\nu_F(u-u')$. A simple definition chase shows that $u\psi$ and $u'\psi$ agree on $\pp^{d-n}$ if and only if $\pp^{d-n+\alpha}=(u-u')\pp^{d-n}\subseteq\ker\psi$. By definition of level, this is the case if and only if $\alpha\geq n$; that is, if $u\equiv u'\pmod{\pp^n}$ or $u'u^{-1}\in U_F^{n}$.
+\end{proof}
+
+\begin{lemma}\label{lem_chars}
+    Let $\theta:\pp^{n}\rightarrow\CC^{\times}$ be a character. Then there are exacty $q$ characters $\Theta$ of $\pp^{n-1}$ such that $\Theta|_{\pp^n}=\theta$.
+\end{lemma}
+
+\begin{proof}
+    Since $\hat\kappa\cong\kappa$, it is enough to construct a bijection between $\mathcal{A}:=\{\Theta\in\widehat{\pp^{n-1}}:\Theta|_{\pp^n}=\theta\}$ and $\hat{\kappa}$. Let $\phi=\theta^{-1}$ and let $\Phi$ be \textbf{any} lift of $\phi$ as a character of $\pp^{n-1}$. Now given $\Theta\in\mathcal{A}$, the character $\Theta\cdot\Phi$ is trivial on $\pp^{n}$ and thus it descends to a map 
+    $$\overline{\Theta\cdot\Phi}:\kappa\cong\pp^{n-1}/\pp^n\longrightarrow\CC^{\times}.$$
+
+    To construct an inverse to the map $\Theta\mapsto\overline{\Theta\cdot\Phi}$, choose some $\chi\in\hat\kappa$, view it as a character of $\pp^{n-1}/\pp^{n}$ and consider the map $\tilde\chi:\pp^{n-1}\rightarrow\CC^{\times}$ given by $\tilde{\chi}(u)=\chi(u+\pp^n)$. Then the map $\chi\mapsto\Phi^{-1}\cdot\tilde\chi$ is the required inverse map.
+\end{proof}
+
+We are now ready for the proof of Additive duality.
+
+\begin{proof}[Proof of Theorem \ref{add_dual}]
+    The map $a\mapsto a\psi$ is clearly a homomorphism. To prove injectivity, suppose that $a\neq b$ but $a\psi=b\psi$. Then it follows that $x(a-b)\in\ker\psi$ for all $x\in F$. But since $a-b\neq 0$, then $\ker\psi=F$, a contradiction.
+
+    Let $\theta\in\hat{F}$ be any non-trivial character (if $\theta$ were trivial, then $0\psi=\theta$), and let $l$ be the level of $\theta$. By replacing $\theta$ with $\varpi^{l-d}\theta$, which has level $d$, we may assume without loss of generality that $\theta$ and $\psi$ have the same level $d$, and therefore they both agree on $\pp^d$. To show there is some $u\in F$ (in fact, $u\in U_F$ necessarily) such that $u\psi=\theta$,   we construct a sequence $\{u_n\}_{n\geq0}$ inductively such that $u_n\psi|_{\pp^{d-n}}=\theta|_{\pp^{d-n}}$ and $u_{n+1}\equiv u_n\pmod{\pp^n}$. Such a sequence is clearly Cauchy, and since $F$ is complete, it converges to some $u\in U_F$ such that $u\equiv u_n\pmod{\pp^n}$ for all $n\geq 1$ and thus $u\psi$ agrees with $\theta$ on $\cup_{n\in\ZZ}\ \pp^n=F$, which concludes the proof.
+
+    Thus, it remains to construct the sequence above. To construct $u_1$ we note that by Lemma \ref{lem_chars}, there are exactly $q-1$ non-trivial characters on $\pp^{d-1}$ that are trivial on $\pp^d$. In addition, by Lemma \ref{lem_congruence}, as $u$ ranges over the cossets of $U_F/U_F^1$, the characters $u\psi|_{\pp^{d-1}}$ are distinct. Since $|U_F/U_F^1|=|\kappa^{\times}|=q-1$, there is some $u_1\in U_F$ such that $u_1\psi$ agrees with $\theta$ on $\pp^{d-1}$. 
+    
+    Assuming now we have constructed $u_1,\ldots,u_n$ in $U_F$ with the desired conditions, we note that by Lemma \ref*{lem_chars}, there are exactly $q$ characters of $\pp^{d-n-1}$ that coincide with $\theta|_{\pp^{d-n}}$ when they are restricted. Again by Lemma \ref*{lem_congruence}, as $\alpha$ ranges over the cossets of $U_F^n/U_F^{n+1}$ the characters $\alpha u_n\psi$ are distinct on $\pp^{d-n-1}$ but they all coincide on $\pp^{d-n}$. Since $|U_F^n/U_F^{n+1}|=|\kappa|=q$, there is some $\alpha_n$ such that $\alpha_n u_n\psi$ coincides with $\theta$ on $\pp^{d-n-1}$. Since $\alpha_n\in U_F^n$, $\alpha_n u_n\equiv u_n\pmod{\pp^n}$. Hence $u_{n+1}:=\alpha_n u_n$ has the requried properties.
+\end{proof}

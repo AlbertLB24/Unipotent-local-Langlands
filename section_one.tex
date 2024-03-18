@@ -52,9 +52,10 @@ We are now ready to give the main definition of this section.
 
 In this document we will be interested in studying the representation theory of many important groups and rings related to the local field $F$. The notion of a locally profinite group is an abstract one, but it has the great advantage of accomodating many important groups and rings associated to non-Archimedean local fields and their representation theory.
 
-\begin{examples}
+\begin{examples} \label{example_prof_groups}
 
     \begin{enumerate}
+        \item Trivially, any group equipped with the discrete topology is profinite, where $\{e\}$ is the fundamental neighbourhood.
         \item In the preceding discussion, we have shown that $F$ is a locally profinite group, where $\pp^n$ for $n\geq1$ is a fundamental system of open compact subgrups.
         \item The multiplicative group $F^{\times}$ is also a locally profinite group, where the congruence unit groups $U_F^n=1+\pp^n$ for $n\geq1$ is a fundamental system of open compact subgroups. We remark that unlike $F$, the group $F^{\times}$ is not the union of its open compact subgroups.
         \item Given $m\geq1$ an integer, the additive group $F^m=F\times\dots\times F$ is also a locally profinite group endowed with the product topology. A fundamental system of open compact subgroups is given by $\pp^{n}\times\dots\times\pp^{n}$ for $n\geq1$. More generally, any product of locally profinite groups is locally profinite.
@@ -62,6 +63,7 @@ In this document we will be interested in studying the representation theory of 
         \item The group $\GL_m(F)$ of invertible matrices is an open subset of $M_m(F)$ since $\det:M_m(F)\rightarrow F$ is continuous and $F^{\times}$ is an open subset of $F$. Furthermore, mutiplication by a matrix $A\in M_m(F)$ and inversion of matrices are continous maps in $M_m(F)$ and therefore $\GL_m(F)$ is also a topological group and the subgroups
         $$K=\GL_m(R),\quad K_n=1+\pp^nM_m(R),\quad n\geq 1,$$
         are compact open, and a fundamental neighbourhood of the identity.
+        \item Let $G$ be a locally profinite group and $H\leq G$ be a closed subgroup. If $U\subseteq H$ is a neighbourhood of the identity on $H$, then there is some $V$ open in $G$ such that $U=H\cap V$. Let $K\subseteq V$ be some open compact subgroup of $G$. Then $K\cap H$ is an open subgroup of $H$ and a closed subgroup of $K$. But since $K$ is compact and Hausdorff, $K\cap H$ is also compact. This shows that $H$ is also a locally profinite subgroup.
     \end{enumerate}
 \end{examples}
 
@@ -71,32 +73,139 @@ Moreover, it is an easy exercise to prove that a profinite group is a compact lo
 $$K\longrightarrow\varprojlim K/N$$
 is a topological isomorphism where $N$ ranges over the normal open subgroups, and the implicit maps are the obvious ones. Since $K$ is compact and $N$ is open, $K/N$ must be finite and discrete, showing that $K$ is profinite.
 
-\subsection{Characters of Local Fields}
-
-Now we turn our attention to the representation theory of locally profinite groups. We begin by recalling the notion of a representation of a group.
+\subsection{Abstract Representations of Groups} \label{Abstract_Reps}
+Before discussing the representation theory of locally profinite groups, we first review some general results and constructions of representations of arbitrary groups $G$. We begin by recalling the notion of a representation.
 
 \begin{defn}
-    A representation of a group $G$ over a field $k$ is a pair $(\pi,V)$ where $V$ is a $k$-vector space and $\pi:G\rightarrow\GL_n(V)$ is a group homomorphism. We say that the $\dim V$ is the dimension of the representation.
+    A representation of a group $G$ over a field $k$ is a pair $(\pi,V)$ where $V$ is a $k$-vector space and $\pi:G\rightarrow\GL(V)$ is a group homomorphism. We say that the $\dim V$ is the dimension of the representation.
 \end{defn}
 
-Equivalently, a representation of $G$ is a $k$-vector space $V$ equipped with a $k$-linear $G$ action. For $g\in G, v\in V$, we will often write $g\cdot v$ for $\pi(g)v$. Throughout this document, we will only be interested in complex representations, so for now on we will assume that $k=\CC$, unless otherwise stated.
+Equivalently, a representation of $G$ is a $k$-vector space $V$ equipped with a $k$-linear $G$ action. Whenver the representation is clear from context, we will omit $\pi$ from the notation and write $g\cdot v$ for $\pi(g)v$. 
+
+Throughout this document, we will only be interested in complex representations, so for now on we will assume that $k=\CC$ unless otherwise stated, and hence we will omit the underlying field from the notation.
+
+We say that $U\leq V$ is a $G$-subspace if $U$ is closed under the $G$-action; i.e. if $g\cdot U\subseteq U$ for every $g\in G$. When this happens, both $U$ and $V/U$ are naturally $G$-representations. Importantly, we say that that a representation $(\pi,V)$ is irreducible (or simple) if $V$ has no non-trivial $G$-subspaces. These are the \textit{building blocks} of more complicated representations, and thus we are often interested in classifying them.
+
+This also motivates the following definition.
+
+\begin{defn}
+    A representation $(\pi,V)$ of a group $G$ is semisimple if it is the direct sum of simple subrepresentations. 
+\end{defn}
+
+\begin{rem}\label{rem_semisimple}
+    If $G$ is a finite group, Maschke's Theorem shows that all finite dimensional complex representations of $G$ are semisimple. As a consequence, one can show that any complex irreducible representation of $G$ is finite dimensional, appearing as a subrepresentation of the canonical representation $\CC G$.
+    Moreover, as we shall see in Lemma \ref{lem_profinite_smooth}, if one considers continous representations, finite dimensional representations of profinite groups are also semisimple, and irreducible representations are finite dimensional.
+
+    However, it is easy to construct representations of locally profinite groups which are continous yet not semisimple. For example,
+    \begin{align*}
+        \phi:\ZZ\longrightarrow \GL_2(\CC)\\
+        n\mapsto 
+        \begin{pmatrix}
+            1 & n\\
+            0 & 1\\
+        \end{pmatrix}
+    \end{align*}
+    has a single one-dimensional invariant subspace. One can also construct irreducible representations that are infinite dimensional, but there are harder to construct. \textbf{Reference to a later section when we consider the reps of the Mirabolic subgroup or the steinberg reps of $\GL2(F)$}.
+\end{rem}
+
 
 Naturally, we also define the notion of a homomorphism between representations.
 
 \begin{defn}
-    A morphism between two representations $(\pi,V)$, $(\sigma,W)$ of a group $G$ is a linear map $\phi:V\rightarrow W$ compatible with the $G$ action. That is, $\phi$ satisfies 
+    A morphism between two complex representations $(\pi,V)$, $(\sigma,W)$ of a group $G$ is a linear map $\phi:V\rightarrow W$ compatible with the $G$ action. That is, 
     $$\phi(\pi(g)v)=\sigma(g)\phi(v)\ \text{for all } g\in G,\ v\in V.$$
 \end{defn}
 
-In studying the representation theory of a locally profinite group $G$, it turns out that the entire set of representations of $G$ is too big, so we need to restrict our attention to those representations satisfying a certain ``smoothness" condition. To motivate this condition, we will first describe the simplest (yet very relevant!) case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$.
+Therefore, the set of complex representations of $G$ form a category denoted by $\Rep_G$, which importantly is an \textbf{abelian category}.
+
+We finish this section by introducing important constructions and functors between these categories that allow us to obtain , which we will use heavily later on.
+
+\begin{defn}
+    Given $(\pi,V)\in\mathrm{Rep}_G$, define the dual space $V^*=\Hom(V,\CC)$, and denote by 
+    \begin{align*}
+        V^*\times V\longrightarrow \CC,\\
+        (v^*,v)\longmapsto\langle v^*,v\rangle,
+    \end{align*}
+    the canonical evaluation homomorphism. Then $V^*$ carries a natural representation 
+    $$\langle\pi^*(g)v^*,v\rangle=\langle v^*,\pi(g^{-1})v\rangle,$$
+    denoted as the dual representation, and the functor 
+    \begin{align*}
+        (-)^*:\Rep_G&\longrightarrow\Rep_G\\
+        (\pi,V)&\longrightarrow(\pi^*,V^*)
+    \end{align*}
+    is an additive and exact contravariant functor.
+\end{defn}
+
+One can also considering the composition on this functor with itself to obtain the \textbf{double dual} $(\pi^{**},V^{**})$. Then there is a canonical $G$-homomorphism $\delta:V\rightarrow V^{**}$ such that $$\langle\delta(v),v^*\rangle_{V^*}=\langle v^*,v\rangle.$$
+When $V$ is finite dimensional, $\delta$ is a $G$-isomorphism. For general representations of locally profinite groups, this is not always the case, but under additional assumptions it is possible to give a precise criterion explaining when $\delta$ is injective and surjective (\cite[2.8 Corollary, 2.9 Proposition]{BH1}).
+
+
+\begin{defn}
+    Let $H\leq G$ be groups and let $(\pi,V)$ and $(\sigma,W)$ be representations of $G$ and $H$ repectively. The restriction of $\pi$ to $H$ gives a \textbf{restriction} functor
+    \begin{align*}
+        \Res_H^G:\Rep_G&\longrightarrow\Rep_H\\
+        (\pi,V)&\longmapsto(\pi|_H,V)
+    \end{align*}
+    On the other hand, given $(\sigma,W)\in\Rep_H$ one can construct the vector space
+    $$X=\{f:G\to W:f(hg)=\sigma(h)f(g)\text{ for all }h\in H, g\in G\},$$
+    equipped with the $G$-action $\Sigma:G\longrightarrow\Aut_\CC(X)$ such that
+    $$\Sigma(g)f:x\longmapsto f(xg),\ x,g\in G.$$
+    This gives the \textbf{induction} functor
+    \begin{align*}
+        \Ind_H^G:\Rep_H&\longrightarrow\Rep_G\\
+        (\pi,V)&\longmapsto(\Sigma,X).
+    \end{align*}
+\end{defn}
+
+As with the dual functor, both the restriction and induction functors are additive and exact covariant functors. To simplify notation, we will write $\Ind_H^G\sigma$ instead of $\Ind_H^G(\sigma,W)$, which is the usual convention in the literature.
+
+We remark that one can construct the following canonical $H$-homomorphisms 
+\begin{align*}
+    a_\sigma: \Ind_H^G\sigma&\longrightarrow W\\
+    f&\longmapsto f(1)
+\end{align*}
+and 
+\begin{align*}
+    a_\sigma^c: W&\longrightarrow \Ind_H^G\sigma\\
+    w&\longmapsto f_w
+\end{align*}
+where $f_w$ is supported in $H$ and $f_w(h)=\sigma(h)w$ for $h\in H$. The choice of notation will be understood later. These, in turn, induce the maps 
+\begin{align*}
+    \Psi:\Hom_G(\pi,\Ind_H^G\sigma)&\longrightarrow\Hom_H(\Res_H^G\pi,\sigma),\\
+    \phi&\longmapsto a_\sigma\circ\phi,
+\end{align*}
+and
+\begin{align*}
+    \Psi^c:\Hom_G(\Ind_H^G\sigma,\pi)&\longrightarrow\Hom_H(\sigma,\Res_H^G\pi),\\
+    f&\longmapsto f\circ a_\sigma^c.
+\end{align*}
+When $G$ is a finite group, we have the following result.
+\begin{thm}[Frobenius reciprocity]
+    Let $G$ be a finite group. Then the maps $\Psi$ and $\Psi^c$ are bijections that are functorial in both variables $\sigma$ and $\pi$. In categorical terms, we have the adjunctions $$\Ind_H^G\dashv\Res_H^G\dashv\Ind_H^G.$$
+\end{thm}
+
+This theorem fails for general representations of locally profinite groups $G$ and subgroups $H\leq G$. However, the theorem does hold under certain additional assumptions on the topology of $H$ inside $G$, a smoothness condition on the representations and an adequate modification of the set $X$ above. This will all be discussed in Section \textbf{Insert here reference to the section in which this is discussed.}
+
+
+\subsection{Characters of Local Fields}
+
+Now we turn our attention to the representation theory of locally profinite groups. In studying their representations, it turns out that the entire set is too big, so we need to restrict our attention to those representations satisfying a certain ``smoothness" condition. To motivate this condition, we will first describe the simplest (yet very relevant!) case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$.
 
 As we have discussed in the previous section, locally profinite groups carry a certain topology, so a natural condition to impose is \textbf{continuity} with respect to the usual topologies in $\CC^{\times}$ and $G$. A continuous homomorphism $\psi:G\rightarrow\CC^{\times}$ will be denoted as a \textit{character} of $G$.
 
-Characters of a locally profinite group $G$ are a group under multiplication, denoted by $\hat{G}$. It turns out that for one-dimensional representations, continuity coincides with the smoothness condition we require. 
+Characters of a locally profinite group $G$ are a group under multiplication, denoted by $\hat{G}$. It turns out that for one-dimensional representations, continuity coincides with the smoothness condition we require which will be introduced later. 
 
-Firstly, we state this rather surprising result which we will use later. 
+When $G$ is a finite group with discrete topology, then any one-dimensional representation is a character, and we have the following simple description.
 
-\begin{lemma}
+\begin{prop}
+    If $G$ is a finite group with the discrete topology, then $\hat{G}\cong G^{ab}$. In particular, if $G$ is abelian then $\hat{G}\cong G$.
+\end{prop}
+\begin{proof}
+    \textbf{Insert reference here}
+\end{proof}
+
+For general locally profinite results, we have this rather surprising result which we will use later. 
+\begin{lemma}\label{lem_cont_chars}
     Let $G$ be a locally profinite group and $\psi: G\rightarrow\CC^{\times}$ a homomorphism. Then $\psi$ is continous if and only if $\ker\psi$ is open in $G$. Furthermore, if $G$ is the union of its compact open subgroups, then\footnote{Characters satisfying this property are called \textit{unitary}} $$\psi(G)\subseteq\{z\in\CC^{\times}:|z|=1\}=S^1.$$
 \end{lemma}
 \begin{proof}
@@ -115,61 +224,186 @@ Before stating the classification theorem for   characters of $F$, we need one l
     Let $\psi$ be a non-trivial character of $F$ (resp. of $F^{\times}$). The \textbf{level} of $\psi$ is defined as be the least $d\geq0$ such that $\pp^d\subseteq\ker\psi$ (resp. $U_F^{d+1}\subseteq\ker\psi$).
 \end{defn}
 
-We are now ready to give the classfication theorem for $\hat{F}$.
+\input{additive_duality_long.tex}
 
-\begin{thm}[Additive duality]
-    Let $\psi\in\hat{F}$ be a non-trivial character with level $d$. 
+
+\subsection{Smooth Representations of Locally Profinite Groups}
+
+We now turn our attention representations of locally profinite groups of arbitrary dimension. For one-dimensional representations, we imposed a natural continuity condition, and Lemma \ref{lem_cont_chars} showed that characters have open kernel. This is a remarkable result, since this means that the homomorphism is continuous with respect to \textbf{any} topology on $\CC^{\times}$, not just the usual one.
+
+For finite dimensional representations $V$, one can give a natural topology to $\Aut_\CC(V)$ as a subspace of $M_n(\CC)\cong\CC^{n^2}$. It is a fact that $\Aut_\CC(V)$ also has the property that small enough neighbourhoods of $I_n$ do not contain any non-trivial subgroup, and following the same reasoning as in Lemma \ref{lem_cont_chars}, one shows that continous finitely dimensional representations have open kernel too. That is, the homomorphism is continous with respect to any topology on $\Aut_\CC(V)$.
+
+However, for infinite dimensional representations $V$, equipping $\Aut_\CC(V)$ with a topology is not as straightforward and the requirement of having an open kernel is too restrictive. The idea behind a \textit{smooth representation} is that any finite dimensional subrepresentation $V$ should indeed have an open kernel. To give the precise definition, we first define the module of invariants and coinvariants.
+
+\begin{defn}
+    Let $H\leq G$ be groups and $(\pi,V)$ a representation of $G$. We define the $H$-invariants to be 
+    $$V^{H}:=\{v\in V:\pi(h)v=v\text{ for all }h\in H\},$$
+    and the $H$-coinvariants to be 
+    $$V_H:=V/V(H)\text{ where } V(H)=\textrm{Span}_\CC\{v-\pi(h)v:v\in V,h\in H\}.$$
+    That is, $V^H$ (resp. $V_H$) is the largest subspace (resp. quotient) on which $H$ acts trivially.
+\end{defn}
+
+We are now ready to define a \textit{smooth representation} of a locally profinite group $G$.
+
+\begin{defn}
+	A representation $V$ of $G$ is \textbf{smooth} if for $v\in V$ there exists a compact-open subgroup $K\subseteq G$ such that $v\in V^K$. In other words,
+    $$V=\bigcup_K V^K.$$
+    Moreover, we say $V$ is \textbf{admissible} if $V^K$ is finite-dimensional for all compact-open $K$.
+\end{defn}
+
+Smooth representations of $G$ are a full, abelian subcategory of $\Rep_G$, and this category is denoted by $\Smo_G$. 
+
+\begin{rem}
+    If $(\pi,V)$ is a finite dimensional smooth representation and $\{v_1,\ldots,v_n\}$ is a $\CC$-basis such that $v_i\in V^{K_i}$ for some open compact subgroups $K_i$, then 
+    $$K:=\bigcap_{i=1}^n K_i\subseteq\ker\pi$$
+    and it is open and compact too, so the kernel is also open. 
+    Conversely, if $\ker\pi$ is open, then there is some open compact subgroup $K$ fixing all of $V$, so in this case smooth and continuous coincide. 
+\end{rem}
+
+
+As we hinted in Remark \ref{rem_semisimple}, smooth representations of locally profinite groups have remarkable algebraic structures, and they share many properties with representations of finite groups, particularly if the group is compact (and thus profinite). We now review them briefly. A direct application (yet technical) of Zorn's Lemma provides with the follwing useful criterion to text semisimplicity of a representation. 
+
+\begin{prop}\label{prop_semisimple}
+    Let $(\pi,V)$ be a smooth representation of a locally profinite group $G$. The following are equivalent:
     \begin{enumerate}
-        \item Let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$ and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
-        \item The map $a\mapsto a\psi$ induces an isomorphism $F\cong\hat{F}$.
+        \item $V$ is the sum of its irreducible $G$-subspaces.
+        \item $V$ is the direct sum of a family of irreducible $G$-subspaces (i.e. $V$ is semisimple)
+        \item any $G$-subspace of $V$ has a $G$-complement in $V$.
     \end{enumerate}
-\end{thm}
+\end{prop}
+
 \begin{proof}
-    For $1.$, it is clear that $a\psi$ is a character since if $x\in\pp^{d-\nu_F(a)}$, then $ax\in\pp^d$ so $a\psi(x)=1$ so $\pp^{d-\nu_F(a)}\subseteq\ker(a\psi)$. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$ so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu_F(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu_F(a)$.
-    For $2.$ the map $a\mapsto a\psi$ is clearly a homomorphism. To prove injectivity, suppose that $a\neq b$ but $a\psi=b\psi$. Then it follows that $x(a-b)\in\ker\psi$ for all $x\in F$. But since $a-b\neq 0$, then $\ker\psi=F$, a contradiction.
-
-    The proof of surjectivity is more involved. Let $\theta\in\hat{F}$ non-trivial, and let $l$ be the level of $\theta$. The idea of the proof is to construct inductively a sequence some $u_0,u_1,\ldots\in F$ such that $u_n\psi$ agrees with $\theta$ on $\pp^{l-n}$ and $u_{n+1}\equiv u_n\ (\mathrm{mod }\pp)$. More concretely, for any $u\in U_F$, the character $u\varpi^{d-l}\psi$ has level $l$, thus agreeing with $\theta$ at $\pp^l$, and any $u_0=u\varpi^{d-l}$ will do. To construct $u_1$, we note that given $u,u'\in U_F$, then $u\varpi^{d-l}\psi$ and $u\varpi^{d-l}\psi$ agree on $\pp^{l-1}$ if and only if $u\equiv u'\pmod{\pp}$, i.e. when $u'u^{-1}\in U_F^1$. Since $\kappa^{\times}\cong(\pp^{l-1}/\pp^l)^{\times}\cong U_F/U_F^1$ are cyclic of order $q-1$, there are $q-1$ characters of $\pp^{l-1}$ trivial on $\pp^l$ and also $q-1$ characters of $\pp^{l-1}$ of the form $u\varpi^{d-l}\psi$ for $u\in U_F$. Then one of them, say $u_1\varpi^{d-l}\psi|_{\pp^{l-1}}$ equals $\theta|_{\pp^{l-1}}$.
-
-    This same idea can be iterated to find the sequence $\{u_n\}_{n\geq1}$ described above. Since this sequence is Cauchy and $F$ is complete, it converges to some $u\in F$ such that $u\varpi^{d-l}\psi=\theta$.
+    \cite[2.2 Lemma]{BH1}
 \end{proof}
 
+Using this Proposition, we can now prove that smooth representations of profinite groups behave in a similar way to those of finite groups. We note that if $G$ is locally profinite group, $K$ a open compact subgroup and $(\pi,V)$ a smooth representation of $G$, then by restriction $(\pi,V)$ is naturally a $K$-representation. But since $K$ is in particular profinite, the next results also apply in this context.
 
-\subsection{Smooth representations of locally profinite groups}
+\begin{prop}\label{lem_profinite_smooth}
+    Let $(\pi,V)$ be a representation of a profinite group $K$. If $V$ is irreducible then it is finite dimensional. Conversely, if $V$ is finite dimensional, then it is semisimple.
+\end{prop}
 
-Let $G$ be a locally profinite group. A representation of $G$ is a pair $(\pi, V)$ where $V$ is a complex vector space (not necessarily finite-dimensional) and $\pi: G \to \GL(V)$ is a homomorphism.
+\begin{proof}
+    The first statement is a matter of following the definitons. Fix any non-zero $v\in V$, and suppose $v\in V^{K_0}$. Then the subspace 
+    $$U=\Span\{\pi(k)v:k\in K\}=\Span\{\pi(k)v:k\in K/K_0\}$$
+    is clearly a $G$-subspace and it is also finite dimensional since $K_0$ is open and $K$ is compact, so $(K:K_0)$ is finite.   
+
+    To prove the second statement, let $v$ and $K_0$ be as above. By replacing $K_0$ by $\cap_{g\in K/K_0}gK_0g^{-1}$ if needed, we may assume that $K_0$ is normal. As above, the subspace 
+    $$W=\Span\{\pi(k)v:k\in K\}$$
+    is finite dimensional and $K_0$ acts trivially on it.
+    Thus $W$ is effectively a finite dimensional representation of the finite group $K/K_0$ and thus by Maschke's Theorem, $W$ is the sum of its irreducible $K$ subspaces. Since $v$ was arbitrary this shows that condition $1.$ of Proposition \ref{prop_semisimple} is satisfied, so $V$ is semisimple.
+
+\end{proof}
+
+This proposition has important structure results. Let $\hat{K}$ denote the set of equivalence classes of irreducible smooth representations of $K$. As we shall see, this notation is consistent with $\hat{F}$ since all irreducible smooth representations of $F$ are one-dimensional.
+
+Let $(\pi,V)$ be a smooth representation of a locally profinite group $G$ and let $K$ be an open compact subgroup. For each $\rho\in\hat{K}$, let $V^\rho$ be the sum of all irreducible $K$-subspaces of $V$ isomorphic to $K$, which is denoted as the $\rho$-isotypic component of $V$. Note also that $V^{1_K}=V^K$.
+
+\begin{prop}
+    Let $G$ be a locally profinite group and $K$ a compact open subgroup of $G$. Let $(\tau,U),(\pi,V)$, $(\sigma,W)\in\Smo_G$ and $a:U\rightarrow V$ and $b:V\rightarrow W$ be $G$-homomorphisms. 
+    \begin{enumerate}
+        \item The space $V$ is the sum of the $K$-isotypic components:
+        $$V=\bigoplus_{\rho\in\hat{K}}V^\rho.$$
+        \item The following holds:
+        $$W^\rho\cap b(V)=b(V^\rho).$$
+        \item The sequence
+        $$U\xlongrightarrow{a} V\xlongrightarrow{b} W$$
+        is exact if and only if 
+        $$U^K\xlongrightarrow{a} V^K \xlongrightarrow{b} W^K$$
+        is exact for every compact open subgroup $K$ of $G$.
+        \item If $V(K)$ is the span of the elements $v-\pi(k)v$ for $v\in V, k\in K$, then
+        $$V(K)=\bigoplus_{\substack{\rho\in\hat{K}\\\rho\neq 1}}V^\rho \text{ and thus } V=V^K\oplus V(K)$$
+        and $V(K)$ is the unique $K$-compement of $V^K$ in $V$. 
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \cite[2.3 Proposition and Corollary 1,2]{BH1}
+\end{proof}
+
+As promised in \S\ref{Abstract_Reps}, we now discuss the dual, restriction and induction functors in the context of smooth representations of locally profinite groups. From our previous discussion, two major problems arise in this context. Firstly, given a locally profinite group $G$ and a subgroup $H$, there is no guarantee that $H$ is locally profinite and thus $\Smo_H$ may not be well-defined. Secondly, when we perform some construction on a smooth representation (constructing its dual, inducing to a bigger group,...) there is no gurarantee that the resulting representation is smooth. Thankfully, both of this problems can be resolved in a straightforward way.
+
+To ensure that $H$ is locally profinite, we must add a condition on the topology on $H$. Based on Example \ref{example_prof_groups}(7), we just need to assume that $H$ is a closed subgroup of $G$. In some cases, we will need to assume that $H$ is also open, which is a more restrictive condition. To ensure that the functors give smooth representations of $G$, we simply compose them with the \textbf{smoothness functor}
+\begin{align*}
+    (-)^\infty:\Rep_G&\longrightarrow\Smo_G,\\
+    (\pi,V)&\longmapsto(\pi^\infty,V^\infty)
+\end{align*}
+where $$V^\infty=\bigcup_K V^K \text{  and  } \pi^\infty(g)=\pi(g)|_{V^\infty} \text{  for each  } g\in G,$$ and $K$ ranges over the compact open subgroups of $G$. By chasing definitions, one can show that $(-)^\infty$ is a well-defined left-exact functor such that 
+$$\Hom_G(V,W)=\Hom_G(V,W^\infty) \text{ for all } V\in\Smo_G, W\in\Rep_G.$$
+
+Using this constructions, we can define the smooth dual, restriction and induction functors. We remark that as long as $H\leq G$ is closed, the usual restriction sends smooth representations of $G$ to smooth representations of $H$. This is not the case for the dual and induction functors, so we apply to construction above.
+
 \begin{defn}
-	A representation $V$ of $G$ is smooth if for $v\in V$ there exists a compact-open subgroup $K\subseteq G$ such that $kv = v$ for all $k\in K$ (i.e. $v\in V^K$). We say $V$ is admissible if $V^K$ is finite-dimensional for all compact-open $K$.
+    If $G$ is a locally profinite group, define the smooth dual functor 
+    \begin{align*}
+        \check{(-)}:\Smo_G&\longrightarrow\Smo_G,\\
+        (\pi,V)&\longmapsto(\check{\pi},\check{V})
+    \end{align*}
+    where $(\check{\pi},\check{V})=(\pi^*,V^*)^\infty$.
 \end{defn}
 
-Let us define induced representations:
+The smooth dual satisfies an important property: if $V$ is a smooth representation of $G$ and $v\in V, v\neq 0$, then there is some $\check{v}\in\check{V}$ such that $\langle\check{v},v\rangle\neq 0$. Consequently, the map $\delta:V\rightarrow\check{\check{V}}$ is injective, and the following proposition gives a criterion for surjectivity.
+
+\begin{prop}
+    With the notation as above, the canonical map $\delta:V\longrightarrow\check\check{V}$ is an isomorphism if and only if $(\pi,V)$ is admissible.
+\end{prop}
+\begin{proof}
+    \cite[2.9 Proposition]{BH1}
+\end{proof}
+
+We also define the smooth induction functor as the composition of the induction and smoothness functor.
+
 \begin{defn}\label{induction}
-	Let $G$ be a locally profinite group, $H\subseteq G$ a closed subgroup, and $W$ a smooth representation of $H$. We define the induced representation as the space of functions $f: G\to W$ satisfying
+    Let $G$ be a locally profinite group and $H\leq G$ a closed subgroup. Define the smooth induction functor
+    \begin{align*}
+        \Ind_H^G:\Smo_H&\longrightarrow\Smo_G,\\
+        (\sigma,W)&\longmapsto(\Sigma,X)
+    \end{align*}
+    where $X$ is the space of functions $f: G\to W$ satisfying
 	\begin{enumerate}
-		\item $f(hg) = h\cdot f(g)$ for all $h\in H, g\in G$
-		\item there is a compact open subgroup $K\subseteq G$ (depending on $f$) such that $f(gk) = f(g)$ for all $g\in G, k\in K$.
+		\item $f(hg) = \sigma(h)f(g)$ for all $h\in H, g\in G$.
+		\item There is a compact open subgroup $K\subseteq G$ (depending on $f$) such that $f(gk) = f(g)$ for all $g\in G, k\in K$.
 	\end{enumerate}
-	We let $G$ act on this space via $(g\cdot f)(x) = f(xg)$. This is a smooth representation of $G$, denoted by $\Ind_H^G W$.
 \end{defn}
-This construction satisfies the following important universal property:
+
+Since the action $\Sigma$ on $X$ is given by $\Sigma(g)f:x\mapsto f(xg)$, condition $2.$ is precisely the smoothness condition that $f\in X^K$ for some open compact subgroup $K$. As above, we will denote this representation of $G$ as $\Ind_H^G\sigma$. Under these conditions, the first half of Frobenius Reciprocity holds:
+
 \begin{thm}[Frobenius reciprocity]
-	Let $V$ be a smooth representation of $G$, and $W$ a smooth representation of $H$. Then there's a natural bijection
+	Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ a smooth representation of a closed subgroup $H$. Then the map
 	\begin{align*}
-		\Hom_G(V, \Ind_H^G W)&\cong \Hom_H(V, W)\\
-		\varphi &\mapsto \alpha_W \circ \varphi
+		\Psi:\Hom_G(\pi, \Ind_H^G\sigma)&\longrightarrow \Hom_H(\Res_H^G \pi, \sigma),\\
+		\varphi &\longmapsto \alpha_\sigma \circ \varphi,
 	\end{align*}
-	where $\alpha_W: \Ind_H^G W \to W$ is the canonical map $\alpha_W(f) = f(1)$.
+    is a bijection that is functorial in both variables $\pi,\sigma$, \textit{and where $\alpha_\sigma:\Ind_H^G\sigma \to W$ is the canonical map $\alpha_\sigma(f) = f(1)$}. In categorical terms,
+    $$\Res_H^G\dashv\Ind_H^G.$$
 \end{thm}
 
-There is also a different variant of induction, called compact induction:
+However, in this context, it is not the case that $\Ind_H^G$ is left adjoint to $\Res_H^G$. With a small modification we can however obtain an analogous result. Firstly, we note that to ensure that $a_\sigma^c$ is a $H$-homomorphism, we need the stronger assumption that $H$ is open in $G$. Secondly, we observe that given representations $(\pi,V)$ and $(\sigma,W)$, of $G$ and $H$ respectively, $a_\sigma^c(w)$ is supported only in $H$ for any $w\in W$. Hence, one should not consider the entire representation $\Ind_H^G\sigma$, but rather a subrepresentation of it. Here is the precise construction.
+
 \begin{defn}
-	Let $G$ be a locally profinite group, $H$ a closed subgroup, and $W$ a smooth representation of $H$. Consider the space of functions $f: G\to W$ that satisfy (1) and (2) in Definition \ref{induction}, and are also compactly supported mod $H$, i.e. the support $\mathrm{supp} f\subseteq H\backslash G$ is compact. The group $G$ also acts on this space by right translations, so we get a representation of $G$, denoted by $c-\Ind_H^G W$.
+	Let $G$ be a locally profinite group, $H$ a closed subgroup, and $(\sigma,W)$ a smooth representation of $H$. Consider the functor 
+    \begin{align*}
+        c-\Ind_H^G:\Smo_H&\longrightarrow\Smo_G,\\
+        (\sigma,W)&\longmapsto(\Sigma,X_c)
+    \end{align*}
+    where 
+    $$X_c=\{f\in X: \supp f\subseteq H\backslash G \text{ is compact}\}.$$
+    We denote functions satisfying the later condition as compactly supported modulo $H$, and this condition is equivalent to $\supp f\subseteq HC$ for some compact set $C$.
+    The action by $\Sigma$ is closed in $\Sigma_c$, so the functor is well-defined.
 \end{defn}
-This construction is mainly of interest in the case when $H$ is open in $G$. In this case, it satisfies a version of Frobenius reciprocity:
+
+This construction is mainly of interest in the case when $H$ is open in $G$, in which case $a_\sigma^c$ is a $H$-homomorphism. This construction satisfies the second half of Frobenius Reciprocity.
+
 \begin{thm}
-	Let $H\subseteq G$ be open, $W$ a smooth representation of $H$ and $V$ a smooth representation of $G$. We have a natural bijection
+	Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ a smooth representation of an open subgroup $H$. Then the map 
 	\begin{align*}
-		\Hom_G(c-\Ind_H^G W, V)&\cong \Hom_H(W, V)\\
-		\varphi &\mapsto \varphi \circ \alpha^c_W 
+		\Psi^c:\Hom_G(c-\Ind_H^G \sigma, \pi)&\longrightarrow \Hom_H(\sigma, \Res_H^G\pi)\\
+		\varphi &\longmapsto \varphi \circ \alpha^c_\sigma 
 	\end{align*}
-	Where $\alpha^c_W: W\to c-\Ind_H^G W$ is the map $w\mapsto f_w$ where $f_w$ is supported in $H$ and satisfies $f_w(h) = hw$.
+    is a bijection that is functorial in both variables $\pi,\sigma$, and \textbf{where $\alpha^c_\sigma: W\to c-\Ind_H^G \sigma$ is the map $w\mapsto f_w$ where $f_w$ is supported in $H$ and satisfies $f_w(h) = hw$.}
 \end{thm}
+In categorial terms, we have the important property
+$$c-\Ind_H^G\dashv\Res_H^G\dashv\Ind_H^G.$$
+
+\newpage
+
+
