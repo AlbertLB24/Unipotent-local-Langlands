@@ -1,22 +1,22 @@
 
 
-Let $F$ be a nonarchimedean local field, $G=\GL_2(F)$, and $B=\{\begin{psmallmatrix} *&*\\0&*\end{psmallmatrix}\}$ the Borel subgroup of upper triangular matrices, so that $B=N \rtimes T$ for $T=\{\begin{psmallmatrix}
-    *&0\\0&*
-\end{psmallmatrix}\} \cong F^\times \times F^\times$ and $N=\{\begin{psmallmatrix}
-    1&*\\0&1
-\end{psmallmatrix}\}\cong F$. Between $N$ and $B$ we also have the mirabolic subgroup $M=\{\begin{psmallmatrix}
-    *&*\\0&1
-\end{psmallmatrix}\}$ with $M/N \cong F^\times$.
+Let $F$ be a nonarchimedean local field, $G=\GL_2(F)$, and $B=\{\begin{psmallmatrix} a&b\\0&d\end{psmallmatrix} \mid a,d \in F^\times, b \in F\}$ the Borel subgroup of upper triangular matrices, so that $B=N \rtimes T$ for $T=\{\begin{psmallmatrix}
+    a&0\\0&d
+\end{psmallmatrix}\mid a,d \in F^\times\} \cong F^\times \times F^\times$ and $N=\{\begin{psmallmatrix}
+    1&b\\0&1
+\end{psmallmatrix}\mid b \in F\}\cong F$. Between $N$ and $B$ we also have the mirabolic subgroup $M=\{\begin{psmallmatrix}
+    a&b\\0&1
+\end{psmallmatrix} \mid a\in F^\times, b \in F\}$ with $M/N \cong F^\times$.
 
-In studying the local Langlands correspondence, we want to understand all the irreducible smooth representations of $G$. One method for producing representations of $G$ is by induction from a subgroup of $G$. Typically one takes this subgroup to be 'parabolic'; in our case there is one nontrivial parabolic, namely $B$. From our decomposition $B=N \rtimes T$ (more generally we have a so-called Levi decomposition) we see that we can produce representations of $B$ by inflating representations of the torus $T$. Since $T \cong F^\times \times F^\times$, the irreducible representations of $T$ are products of characters of $F^\times$, which are relatively easy to get a handle on.
+In studying the local Langlands correspondence, we want to understand all the irreducible smooth representations of $G$. One method for producing representations of $G$ is by induction from a subgroup of $G$. Typically one takes this subgroup to be `parabolic'; in our case there is one nontrivial parabolic, namely $B$. From our decomposition $B=N \rtimes T$ (more generally we have a so-called Levi decomposition) we see that we can produce representations of $B$ by inflating representations of the torus $T$. Since $T \cong F^\times \times F^\times$, the irreducible representations of $T$ are products of characters of $F^\times$, which are relatively easy to get a handle on.
 
 \begin{defn}
-    For $\chi:T \to \CC^\times$ a character of the torus, we call the process of inflating to $B$ followed by inducing to $G$ parabolic induction. The representation $\Ind_B^G \chi$ is a parabolically induced representation. A principal series representation is an irreducible subrepresentation of a parabolically induced representation.
+    For $\chi:T \to \CC^\times$ a character of the torus, we say that the representation $\Ind_B^G \chi$ is a parabolically induced representation. A principal series representation is an irreducible subrepresentation of a parabolically induced representation.
 \end{defn}
 
 In this section, we will only concern ourselves with classifying the principal series representations of $G$. This means that we must understand how $\Ind_B^G \chi$ decomposes into irreducible representations of $G$, and also study the morphisms between them using Frobenius reciprocity.
 
-To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so 'miraculous'. To get representations of $M$ we can induct from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ under $a \mapsto \psi(a-)$, for $a \in F$ and any nontrivial character $\psi$ of $F$. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
+To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so `miraculous'. To get representations of $M$ we can induce from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ [REFER TO SECTION 1]. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
 
 In this section, we begin by studying the representations of $N$ and introducing the Jacquet functor, before discussing representations of $M$. From there we determine that parabolically induced representations of $G$ decompose over $M$ with length at most 3. Theorem \ref{criterion} gives the decomposition of $\Ind_B^G \chi$ into irreducible representations of $G$, and then Theorem \ref{classify} lists the isomorphism classes of principal series representations. The presentation follows sections 8 and 9 of \cite{BH1}.
 
@@ -33,14 +33,16 @@ The following is a useful equivalent definition of $V(\theta)$:
 \begin{lemma}\label{criteria N}
     The vector $v \in V$ lies in $V(\theta)$ if and only if 
     $$\int_{N_0} \theta(n)^{-1}  n \cdot v dn = 0$$
-    for some compact open subgroup $N_0$ of $N$ (we restrict to compact opens for the integral to be well defined).
+    for some compact open subgroup $N_0$ of $N$.
 \end{lemma}
+In the lemma we restrict to compact opens for the integral to be well defined.
+
 \begin{proof}
     \cite{BH1} Lemma 8.1.
 \end{proof}
 
 \begin{cor}\label{exact}
-    The functor $V \mapsto V_\theta$ from representations of $N$ to complex vector spaces is exact.
+    The functor $V \mapsto V_\theta$ from smooth representations of $N$ to complex vector spaces is exact.
 \end{cor}
 \begin{proof}
     One checks formally that the functor is right exact. For left exactness we need to show that if $f: V \hookrightarrow V'$ is injective then $V_\theta \hookrightarrow V'_\theta$ is injective. If $v \in V$ with $f(v) \in V'(\theta)$, then 
@@ -51,7 +53,7 @@ The following is a useful equivalent definition of $V(\theta)$:
 \end{proof}
 
 \begin{prop}
-    For any $v \neq 0$ in $V$, there exists a character $\theta$ of $N$ such that $v \not\in V(\theta)$.
+    Let $V$ be a smooth representation of $N$. For any $v \neq 0$ in $V$, there exists a character $\theta$ of $N$ such that $v \not\in V(\theta)$.
 \end{prop}
 \begin{proof}
     \cite{BH1} Proposition 8.1.
@@ -66,14 +68,16 @@ The following is a useful equivalent definition of $V(\theta)$:
 
 Now we consider $V$ an irreducible smooth representation of $M$. 
 
-\begin{lemma}
-	The subspace $V(N) \leq V$ is a representation of $M$, and so $V_N$ is as well. Moreover, $S$ permutes the subspaces $V(\theta)$ with $\theta \not= 1$ transitively, and hence the spaces $V_\theta$ are isomorphic.
+\begin{lemma}\label{coinvariants}
+	The subspace $V(N) \leq V$ is a representation of $M$, and so $V_N$ is as well. Moreover, $S = \{\begin{psmallmatrix}
+        a&0\\0&1
+    \end{psmallmatrix} \mid a \in F^\times\}$ permutes the subspaces $V(\theta)$ with $\theta \not= 1$ transitively, and hence the $V_\theta$ are isomorphic as vector spaces.
 \end{lemma}
 \begin{proof}
 	The first claim comes from the computation 
 	$$mn\cdot v - m\cdot v = n'm\cdot v - m\cdot v$$ for some $n' \in N$, using the fact that $N \lhd M$. For the second claim we have the computation
 	\[s(nv - \theta(n)v) = sns^{-1}\cdot sv - \theta (s^{-1}(sns^{-1})s)sv = n'\cdot sv - \theta(s^{-1}n's) sv\]
-	where $n' = sns^{-1}\in N$. Hence $sV(\theta) = V(\theta')$ there $\theta'(n) = \theta(s^{-1}ns)$. Now because of the computation
+	where $n' = sns^{-1}\in N$. Hence $sV(\theta) = V(\theta')$ where $\theta'(n) := \theta(s^{-1}ns)$. Now the computation
 	\[\begin{pmatrix}
 		a & 0 \\ 0 & 1
 	\end{pmatrix}\begin{pmatrix}
@@ -83,10 +87,10 @@ Now we consider $V$ an irreducible smooth representation of $M$.
 	\end{pmatrix} = \begin{pmatrix}
 		1 & ax \\ 0 & 1
 	\end{pmatrix}\]
-	and the fact that $a \leftrightarrow (x\mapsto\theta(ax))$ is a bijection between nontrivial characters of $F^\times$ and $F^\times$, we get the claim.
+	together with [ADDITIVE DUALITY] implies the claim.
 \end{proof}
 
-So if $V$ is irreducible, either $V(N)=0$, so that $N$ acts trivially on $V$ and we just get a character of $F^\times$, or $V(N)=V$. In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by the above Lemma and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension. In fact there is only one such $V$, and we have more specifically:
+If $V$ is an irreducible smooth representation of $M$, then either $V(N)=0$ or $V(N)=V$. In the former case $N$ acts trivially on $V$, so the action of $M$ factors through $M/N \cong F^\times$. Irreducibility implies that $V$ is a character of $M$ factoring through $M/N$. and we just get a character of $F^\times$, or $V(N)=V$. In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by the above Lemma and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension. In fact there is only one such $V$, and we have more specifically:
 
 \begin{thm}\label{inf dim}
     Let $(\pi,V)$ be an irreducible smooth representation of $M$. Either 
@@ -106,7 +110,7 @@ $$\Hom_N(V,V_\theta) \cong \Hom_M(V,\mathrm{Ind}_N^M V_\theta).$$
 Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V_\theta$.
 
 \begin{thm}\label{mirabolic}
-    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. The smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. As mentioned earlier, it is infinite dimensional.
+    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. The smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. 
 \end{thm}
 \begin{proof}
     Theorem 8.3 and Corollary 8.2 of \cite{BH1}.
@@ -120,8 +124,10 @@ Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V
 Let $V$ be a smooth representation of $G$. In the preceding subsections, we defined the quotient $V_N =V/V(N)$, called the $N$-coinvariants of $V$. As in Lemma \ref{coinvariants}, this is a representation of $B$ (as $N \lhd B$). As $N$ acts trivially on $V_N$, $V_N$ inherits the structure of a representation of $T=B/N$.
 
 \begin{defn}
-    Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. By Corollary \ref{exact}, the Jacquet functor is exact.
+    Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. 
 \end{defn}
+
+By Corollary \ref{exact}, the Jacquet functor is exact.
 
 If $V$ is a representation of $G$, and $\chi$ is a character of $T$, then we have by Frobenius Reciprocity that
 \[\Hom_G(V, \Ind_B^G \chi) \cong \Hom_B(V, \chi)\]
@@ -129,12 +135,12 @@ But since $\chi$ as a character $B$ has trivial $N$-action, maps $V\to \chi$ fac
 \[\Hom_G(V, \Ind_B^G \chi)\cong \Hom_T(V_N, \chi)\]
 i.e. the Jacquet module is left adjoint to parabolic induction.
 
-In the classical setting of representations of $G=\GL_2(k)$ for a finite field $k$, we have the following dichotomy (where $B,T,N$ are the appropriate subgroups of $G$):
+In the classical setting of representations of $\mathbf G=\GL_2(k)$ for a finite field $k$, we have the following dichotomy (where $\mathbf B,\mathbf T,\mathbf N$ are the appropriate subgroups of $\mathbf G$):
 \begin{lemma}
-    Let $(\pi,V)$ be an irreducible representation of $G$. The following are equivalent:
+    Let $(\pi,V)$ be an irreducible representation of $\mathbf G$. The following are equivalent:
     \begin{enumerate}
-        \item $\pi$ contains the trivial character of $N$
-        \item $\pi$ is isomorphic to a $G$-subrepresentation of $\Ind_B^G \chi$ for some character $\chi$ of $T$ inflated to $B$.
+        \item $\pi$ contains the trivial character of $\mathbf N$
+        \item $\pi$ is isomorphic to a $\mathbf G$-subrepresentation of $\Ind_{\mathbf B}^{\mathbf G} \chi$ for some character $\chi$ of $\mathbf T$ inflated to $\mathbf B$.
     \end{enumerate}
 \end{lemma}
 \begin{proof}
