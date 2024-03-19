@@ -90,7 +90,7 @@ Now we consider $V$ an irreducible smooth representation of $M$.
 	together with [ADDITIVE DUALITY] implies the claim.
 \end{proof}
 
-If $V$ is an irreducible smooth representation of $M$, then either $V(N)=0$ or $V(N)=V$. In the former case $N$ acts trivially on $V$, so the action of $M$ factors through $M/N \cong F^\times$. Irreducibility implies that $V$ is a character of $M$ factoring through $M/N$. and we just get a character of $F^\times$, or $V(N)=V$. In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by the above Lemma and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension. In fact there is only one such $V$, and we have more specifically:
+
 
 \begin{thm}\label{inf dim}
     Let $(\pi,V)$ be an irreducible smooth representation of $M$. Either 
@@ -99,24 +99,32 @@ If $V$ is an irreducible smooth representation of $M$, then either $V(N)=0$ or $
         \item $\dim V = \infty$ and $\pi \cong c\mathrm{-Ind}_N^M \theta$, for any nontrivial character $\theta$ of $N$.
     \end{itemize}
 \end{thm}
-\begin{proof}
-    If $V(N) = 0$ then $N$ acts trivially on $V$, and $V$ is a representation of $M/N \cong F^\times$. Hence by Schur's lemma, it's one-dimensional and we're in the first case.
-    
-    If $V(N) \not= 0$ then $V(N) = V$ and $V_N = 0$. Hence $V_\theta \not= 0$ for all nontrivial characters $\theta$, and $\dim V = \infty$. The following theorem implies that $V = V(N)$ is isomorphic to $c\mathrm{-Ind}_N^M V_\theta$, which is a direct sum of copies of $c\mathrm{-Ind}_N^M \theta$. Since it is irreducible, we must have $V\cong c\mathrm{-Ind}_N^M \theta$. 
-\end{proof}
 
-This itself follows from the following theorem. To compare $V$ and $c\mathrm{-Ind}_N^M \theta$, it is more natural to compare $V$ and $\mathrm{Ind}_N^M V_\theta$. By Frobenius reciprocity,
+This itself follows from the following theorems. To compare $V$ and $c\mathrm{-Ind}_N^M \theta$, it is more natural to compare $V$ and $\mathrm{Ind}_N^M V_\theta$. By Frobenius reciprocity,
 $$\Hom_N(V,V_\theta) \cong \Hom_M(V,\mathrm{Ind}_N^M V_\theta).$$
 Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V_\theta$.
 
 \begin{thm}\label{mirabolic}
-    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. The smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. 
+    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. 
 \end{thm}
 \begin{proof}
-    Theorem 8.3 and Corollary 8.2 of \cite{BH1}.
+    Theorem 8.3 of \cite{BH1}.
 \end{proof}
 
-% Do we want to add more detail to the above 2 subsections? 
+\begin{thm}\label{irred induction}
+    For any nontrivial character $\theta$ of $N$, the smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. 
+\end{thm}
+\begin{proof}
+    Corollary 8.2 of \cite{BH1}
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{inf dim}]
+    If $V$ is an irreducible smooth representation of $M$, then either $V(N)=0$ or $V(N)=V$. In the former case $N$ acts trivially on $V$, so the action of $M$ factors through $M/N \cong F^\times$. Schur's lemma implies that $V$ is a character of $M$ factoring through $M/N$. 
+    
+    In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by Lemma \ref{coinvariants} and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension, since there are infinitely many characters $\theta$. Theorem \ref{mirabolic} implies that $V = V(N)$ is isomorphic to $c\mathrm{-Ind}_N^M V_\theta$, which is a direct sum of copies of $c\mathrm{-Ind}_N^M \theta$. Since $c\mathrm{-Ind}_N^M \theta$ is irreducible by Theorem \ref{irred induction}, we must have $V\cong c\mathrm{-Ind}_N^M \theta$. 
+\end{proof}
+
+
 
 
 \subsection{Irreducible principal series representations}
@@ -221,7 +229,7 @@ The following lemma makes the structure of $V$ more apparent.
     For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$). Moreover, $V(N)$ is infinite-dimensional.
 \end{prop}
 \begin{proof}
-    The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by the same theorem.
+    The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by Theorem \ref{irred induction}.
 
     By the above lemma we can identify $V \cong C_c^\infty(N)$ as $N$-representations. But $M$ also acts via right translation on $V$ (since $BwB=BwN=BwM$), which gives the structure of a $M$-representation on $C_c^\infty(N)$. We can calculate it explicitly (but we won't need it), where
     $$f\left(bw\begin{pmatrix}
@@ -241,7 +249,7 @@ The following lemma makes the structure of $V$ more apparent.
     \end{pmatrix}$$ of $a \in F^\times$.
 
     So now we may consider $V=C_c^\infty(N)$. The benefit is that for this representation, the spaces of coinvariants of characters $\theta$ of $N$ are very simple. In particular, the map $f \mapsto \theta f$ is a linear automorphism of $C_c^\infty(N)$ taking $V(N)$ to $V(\theta)$, since $$n \cdot f - f \mapsto \theta (n \cdot f) - \theta f = \theta(n)^{-1} n \cdot (\theta f) - \theta f \in V(\theta).$$
-    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterisation of $V(N)$ as the zeros of some integral (Lemma \ref{criteria N}), or from the Restriction-Induction lemma to follow). The result follows from Theorem \ref{mirabolic}.
+    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterisation of $V(N)$ as the zeros of some integral (Lemma \ref{criteria N}), or from the Restriction-Induction lemma to follow). The result follows from Theorem \ref{mirabolic} and Theorem \ref{irred induction}.
 \end{proof}
 
 We turn our attention to the Jacquet module $V_N$. Recall $V$ fits in the exact sequence
@@ -318,10 +326,8 @@ We make some comments in preparation for the proof. Suppose $X$ is a reducible r
     For $\chi$ a character of $T$ and $\phi$ a character of $F^\times$, we have $\Ind_B^G(\phi\chi) = \phi\Ind_B^G \chi$.
 \end{lemma}
 \begin{proof}
-    The representation $\Ind_B^G(\phi\chi)$ consists of the space of functions $f: G \to \CC^\times$, smooth under right translation by $G$, satisfying $f(bg)=\phi(b)\chi(b)f(g)$ for any $b \in B$.
-
-
- 
+    Since $\phi\chi(b) = \phi \circ \det(b) \chi(b)$ for any $b \in B$, where $\chi$ is inflated from $T$, we see that 
+    $$(\phi \circ \det)(bg)f(bg) = \phi\chi(b)(\phi \circ \det)(g)f(g)$$ for any $f \in \Ind_B^G \chi$. Thus the map $f \mapsto (\phi \circ \det)f$ from $\Ind_B^G \chi \to \Ind_B^G(\phi\chi)$ is well defined on the underlying vector spaces. This induces an isomorphism of representations of $G$, $\phi\Ind_B^G \chi \cong \Ind_B^G(\phi\chi)$.
 \end{proof}
 
 \begin{prop}
