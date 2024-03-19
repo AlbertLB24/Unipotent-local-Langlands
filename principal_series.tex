@@ -218,7 +218,7 @@ The following lemma makes the structure of $V$ more apparent.
 \end{proof}
 
 \begin{prop}
-    For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$). Moreover, $V(N)$ is infinite dimensional.
+    For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$). Moreover, $V(N)$ is infinite-dimensional.
 \end{prop}
 \begin{proof}
     The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by the same theorem.
@@ -306,14 +306,23 @@ So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$-rep
     \end{enumerate}
 \end{thm}
 
-We make some comments in preparation for the proof. By the above Corollary, if $X$ is reducible then it has a finite dimensional (dimension 1 or 2) $G$-subspace or $G$-quotient. By taking duals we can assume we are in the first case. In the Irreducibility Criterion, we want to show that this implies $\chi_1 = \chi_2$ and that $X$ has a 1-dimensional $G$-subspace.
+We make some comments in preparation for the proof. Suppose $X$ is a reducible representation of $G$, and $X_0$ a nonzero proper subrepresentation. If $X_0$ is finite-dimensional, then its composition factors over $B$ can only consist of the 1-dimensional composition factors of $X$ over $B$ described in Corollary \ref{length 3}. If $X_0$ is infinite-dimensional, then it contains the infinite-dimensional $B$-composition factor of Corollary \ref{length 3}, and so the quotient $X/X_0$ can only consist of the 1-dimensional factors. In all, if $X$ is reducible then it has a finite dimensional (dimension 1 or 2) $G$-subspace or $G$-quotient. By taking duals we can assume we are in the first case. In the Irreducibility Criterion, we want to show that this implies $\chi_1 = \chi_2$ and that $X$ has a 1-dimensional $G$-subspace.
 
 \begin{defn}
     Let $\pi$ be a smooth representation of $G$ and $\phi$ a character of $F^\times$. The twist of $\pi$ by $\phi$ is the representation $\phi\pi$ of $G$ defined by 
     $$\phi \pi(g) = \phi (\det g)\pi(g).$$
-    In this way, for a character $\chi=\chi_1 \otimes \chi_2$ of $T$, we have $\phi\chi = \phi\chi_1 \otimes \phi\chi_2$. Then 
-    $$\mathrm{Ind}_B^G(\phi\chi) = \phi \mathrm{Ind}_B^G \chi.$$
+    In this way, for a character $\chi=\chi_1 \otimes \chi_2$ of $T$, we have $\phi\chi = \phi\chi_1 \otimes \phi\chi_2$. 
 \end{defn}
+
+\begin{lemma}
+    For $\chi$ a character of $T$ and $\phi$ a character of $F^\times$, we have $\Ind_B^G(\phi\chi) = \phi\Ind_B^G \chi$.
+\end{lemma}
+\begin{proof}
+    The representation $\Ind_B^G(\phi\chi)$ consists of the space of functions $f: G \to \CC^\times$, smooth under right translation by $G$, satisfying $f(bg)=\phi(b)\chi(b)f(g)$ for any $b \in B$.
+
+
+ 
+\end{proof}
 
 \begin{prop}
     The following are equivalent:
@@ -321,14 +330,14 @@ We make some comments in preparation for the proof. By the above Corollary, if $
         \item $\chi_1=\chi_2$
         \item $X$ has a 1-dimensional $N$-subspace.
     \end{enumerate}
-    If this holds then this subspace is unique, and is also a $G$-subspace of $X$ not contained in $V$.
+    If this holds then this subspace is also a $G$-subspace of $X$ not contained in $V$.
 \end{prop}
 \begin{proof}
-    (1) implies (2): since induction commutes with twisting we may assume $\chi_1=\chi_2=1$, then the nonzero constant function spans a 1-dimensional $G$-subspace (not just $N$-subspace) of $X = \mathrm{Ind}_B^G 1$.
+    (1) implies (2): since induction commutes with twisting we may assume $\chi_1=\chi_2=1$, then any nonzero constant function spans a 1-dimensional $G$-subspace (not just $N$-subspace) of $X = \mathrm{Ind}_B^G 1$.
 
     (2) implies (1): suppose this subspace is spanned by $f$. The group $N$ acts as a character on this subspace via right translation. We cannot have $f \in V$ (meaning $f(1)=0$) because we saw earlier that $f$ would then have support in some $BwN_0$ for $N_0 \leq N$ open compact, and this is not closed under multiplication by $N$.
 
-    So $f \not\in V$ and therefore its image spans $X/V \cong \CC$. On this quotient, $N$ acts trivially because $\chi$ was inflated from $B/N=T$. Thus $f$ is in fact fixed by $N$ under right translation. But $f$ is also fixed under right translation by some compact open of $G$, so for sufficiently large $|x|$ we have
+    So $f \not\in V$ and therefore its image spans $X/V \cong \CC$, on which $B$ acts via $\chi$. On this quotient, $N$ acts trivially because $\chi$ was inflated from $B/N=T$. Thus $f$ is in fact fixed by $N$ under right translation. But $f$ is also fixed under right translation by some compact open of $G$, so for sufficiently large $|x|$ we have
     \begin{equation*}
         \begin{split}
             f(w) = f\left(w \begin{psmallmatrix}
@@ -345,17 +354,20 @@ We make some comments in preparation for the proof. By the above Corollary, if $
             \end{psmallmatrix}\begin{psmallmatrix}
                 -x^{-1}&0 \\0 & x
             \end{psmallmatrix}\right) \\
-            &= \chi_1(-1) \left( \chi_1^{-1}\chi_2(x)\right) f(1)
+            &= \chi_1(-1) \left( \chi_1^{-1}\chi_2(x)\right) f(1).
         \end{split}
     \end{equation*}
 
-    This tells us that $\chi_1^{-1}\chi_2(x)$ is constant for $x$ sufficiently large. Since this is also true for $x^2$, we see that $\chi_1(x)=\chi_2(x)$ for $x$ sufficiently large. Now for any $y \in F^\times$, we can pick $x$ large enough so that $\chi_1(x)=\chi_2(y)$ and $\chi_1(xy)=\chi_2(xy)$, from which we deduce that $\chi_1=\chi_2$. 
+    The first equality comes from $f$ being fixed by $N$. The third equality comes from $f$ being fixed by a compact open subgroup of $G$.
+
+    This tells us that $\chi_1^{-1}\chi_2(x)$ is constant for $x$ sufficiently large. In particular, for large $x$ we have $\chi_1^{-1}\chi_2(x) = \chi_1^{-1}\chi_2(x^2) = (\chi_1^{-1}\chi_2(x))^2$. We deduce that $\chi_1(x)=\chi_2(x)$ for $x$ sufficiently large. Now for any $y \in F^\times$, we can pick $x$ large enough so that $\chi_1(x)=\chi_2(x)$ and $\chi_1(xy)=\chi_2(xy)$, from which we deduce that $\chi_1(y)=\chi_2(y)$. 
     
-    The uniqueness of the 1-dimensional subspace comes from the fact that it must span $X/V \cong \CC$. 
+    %The uniqueness of the 1-dimensional subspace comes from the fact that it must span $X/V \cong \CC$. 
+    % if we had two then any linear combination must also not live in V, then the 2D space does not intersect the kernel of X to X/V, but this is 1D.
 \end{proof}
 
 \begin{proof}[Proof of Irreducibility Criterion]
-    Assume that $X$ is reducible and we are in the case that $X$ has a finite dimensional $G$-subspace. Then it has a 1-dimensional $N$-subspace $L$ because $N$ is abelian, which is also a $G$-subspace by the above proposition. Since $G$ must act via a character on $L$, it factors as $\phi \circ \det$, where $\chi_1=\phi=\chi_2$. 
+    Assume that $X$ is reducible and we are in the case that $X$ has a finite dimensional $G$-subspace. It has a 1-dimensional $N$-subspace $L$ because $N$ is abelian. Then $L$ is also a $G$-subspace by the above proposition. Since $G$ must act via a character on $L$, it factors as $\phi \circ \det$, where $\chi_1=\phi=\chi_2$. 
 
     Let $Y$ be the $G$-representation $X/L$. Since $L$ spans the vector space $X/V$, the $B$-homomorphism \\${V \hookrightarrow X \to X/L}$ is surjective. It is injective since $L \cap V = 0$. Thus $Y \cong V$ as $B$-representations.
 
@@ -378,20 +390,21 @@ Now that we've seen how parabolically induced representations decompose into irr
 \begin{proof}
     Frobenius reciprocity tells us
     $$\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \xi) \cong \Hom_T((\Ind \chi)_N, \xi).$$
-    From the Restriction-Induction lemma we have
+    From the Restriction-Induction lemma we have the exact sequence of $T$-modules
     $$\xymatrix{0 \ar[r] & \chi^w \delta_B^{-1} \ar[r] & (\Ind \chi)_N \ar[r] & \chi \ar[r] & 0.}$$
-    In the case $\chi \neq \chi^w \delta_B^{-1}$ the sequence splits and the result follows. If $\chi = \chi^w \delta_B^{-1}$ then $\chi_1\chi_2^{-1} (x) = |x|$ so $\Ind \chi$ is irreducible and the result still follows.
+
+    By taking duals of these finite dimensional $T$-modules, we see that both $\chi$ and $\chi^w \delta_B^{-1}$ are subrepresentations of $(\Ind \chi)_N$. In the case $\chi \neq \chi^w \delta_B^{-1}$ we must have $(\Ind \chi)_N = \chi \oplus \chi^w \delta_B^{-1}$ and the result follows. If $\chi = \chi^w \delta_B^{-1}$ then $\chi_1\chi_2^{-1} (x) = |x|$ so $\Ind \chi$ is irreducible and the result still follows from Schur's lemma.
 \end{proof}
 
 \begin{rem}
 In the case that $\Ind \chi$ is irreducible, we deduce that $\Ind \chi \cong \Ind \chi^w \delta_B^{-1}$. And in the case $\Ind \chi$ is reducible, it is not semisimple, else $\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \chi)$ would have dimension strictly greater than 1.
 \end{rem}
 
-We can be more explicit in the reducible case. One can check that the conditions for reducibility in the Irreducibility Criterion are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$. Untwisting, we may as well assume $\phi=1$ in what follows.
+We can be more explicit in the reducible case. One can check that the conditions for reducibility in the Irreducibility Criterion are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$ for $\phi$ a character of $F^\times$. Untwisting, we may as well assume $\phi=1$ in what follows.
 
 \begin{defn}
     The Steinberg representation of $G$ is defined by the exact sequence
-    $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0,}$$ and is an infinite dimensional irreducible smooth representation. By Restriction-Induction, the Jacquet module is $(\mathrm{St}_G)_N \cong \delta_B^{-1}$. The representations $\phi \mathrm{St}_G$ are called `twists of Steinberg' or `special representations'.
+    $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0,}$$ and is an infinite-dimensional irreducible smooth representation. By Restriction-Induction, the Jacquet module is $(\mathrm{St}_G)_N \cong \delta_B^{-1}$. The representations $\phi \mathrm{St}_G$ are called `twists of Steinberg' or `special representations'.
 \end{defn}
 
 The case $\chi = \delta_B^{-1}$ can be dealt with by taking smooth duals (which is exact by \cite{BH1} Lemma 2.10) to get 
