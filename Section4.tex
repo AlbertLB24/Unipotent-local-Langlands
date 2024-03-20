@@ -52,7 +52,7 @@ This can be viewed as a weighted average of the action of $G$ on $v$, where the 
 If $V$ is a smooth representation, then any $v \in V$ is $K$-invariant for some compact open $K$, and so $v=e_K \cdot v$. This implies that $V$ is a smooth $\mathcal H(G)$-module. Conversely, $\mathcal H(G)$ is the union of $e_K* \mathcal H(G) *e_K = \mathcal H(G,K)$ over all compact open $K$, and so if $V$ is a smooth $\mathcal H(G)$-module then any $v \in V$ is of the form $e_K * f * e_K \cdot v'$ for some $K, f, v'$. Then $e_K \cdot v=v$ and so $v \in V^K$.
 \end{proof}
 
-So we can view smooth representations of $G$ as smooth $\mathcal H(G)$-module. In the other direction, given $M$ a smooth $\mathcal H(G)$-module, we have $$\mathcal H(G) \otimes_{\mathcal H(G)} M = M$$ by smoothness. We can then view $M$ as a smooth $G$ representation by letting $G$ act on the first factor by left translation. Concretely, if $m \in M$ there exists $K$ such that $e_K \cdot m = m$. Then define $$g \cdot m := \mu(K)^{-1} \mathbbm{1}_{gK} \cdot m,$$ where this is independent of $K$ due to the normalisation factor $\mu(K)^{-1}$.
+So we can view smooth representations of $G$ as smooth $\mathcal H(G)$-module. In the other direction, given $M$ a smooth $\mathcal H(G)$-module, we have $$\mathcal H(G) \otimes_{\mathcal H(G)} M = M$$ by smoothness. We can then view $M$ as a smooth $G$ representation by letting $G$ act on the first factor by left translation. Concretely, if $m \in M$ there exists $K$ such that $m \in \mathcal H(G,K)M = e_K*\mathcal H(G)*e_K M$. Then $m = e_K \cdot m'$ for some $m' \in M$ and therefore $e_K \cdot m = m$ because $e_K$ is idempotent in $\mathcal H(G)$. Then define $$g \cdot m := \mu(K)^{-1} \mathbbm{1}_{gK} \cdot m,$$ where this is independent of $K$ due to the normalisation factor $\mu(K)^{-1}$.
 
 \subsection{Information in the $K$-invariants $V^K$}
 For a smooth representation $V$ of $G$ it is often easier to study the $K$-invariants $V^K$ for compact open subgroups $K$ of $G$.
@@ -65,7 +65,7 @@ For a smooth representation $V$ of $G$ it is often easier to study the $K$-invar
 \begin{proof}
     Suppose $V$ is irreducible. If we had $0 \neq M \subset V^K$ a $\mathcal H(G,K)$-module, then $0 \neq \mathcal H(G) M \subset V$ as smooth $\mathcal H(G)$-modules. Since smooth $\mathcal H(G)$-modules are the same as smooth $G$-representations, and $V$ is irreducible, we deduce $\mathcal H(G)M = V$. So then $$V^K = e_K V = e_K * \mathcal H(G)M = e_K * \mathcal H(G) *e_K M = \mathcal H(G,K)M=M$$ which implies the result.
 
-    If $V$ is not irreducible, and $W \neq 0$ is a proper subrepresentation, pick $v \in V-W$. By smoothness, there exists $K$ such that $v \in V^K$, but then $v \not\in W^K$ so that $V^K$ is not 0 or simple.
+    If $V$ is not irreducible, and $W \neq 0$ is a proper subrepresentation, pick $v \in V-W$. By smoothness, there exists $K$ such that $v \in V^K$, and also $W^K \neq 0$, but then $v \not\in W^K$ so that $V^K$ is not 0 or simple.
 \end{proof}
 
 The next result tells us that for any $K$, any smooth representation $V$ of $G$ is determined by $V^K$ with its structure as a $\mathcal H(G,K)$-module, provided $V^K \neq 0$.
@@ -102,10 +102,10 @@ An application of the Satake isomorphism (\cite{GH1} Theorem 5.5.1) tells us tha
     \begin{equation*}
         \begin{split}
             \mathcal H(G,K) &\to \CC \\
-            f &\mapsto \mathrm{tr} \pi(f)
+            f &\mapsto \pi(f)
         \end{split}
     \end{equation*}
-    defined by $f \cdot v =: \mathrm{tr}\pi(f) v $ for any $v \in V^K$.
+    defined by $f \cdot v =: \pi(f) v $ for any $v \in V^K$.
 \end{defn}
 
 We give an alternative proof of Proposition \ref{K bij}.
@@ -116,7 +116,7 @@ We give an alternative proof of Proposition \ref{K bij}.
 \begin{proof}
     This is Proposition 7.1.1 of \cite{GH1}. The idea is to extend an isomorphism $$I: V_1^K \to V_2^K$$ to a $G$-intertwining map $V_1\to V_2$ of $\mathcal H(G)$-modules. By irreducibility, $V_i = \mathcal H(G)V_i^K$. Take an element $\pi_1(f) \cdot \phi \in V_1$, with $f \in \mathcal H(G), \phi \in V_1^K$, then the obvious choice is to map this to $\pi_2(f) \cdot I(\phi)$. Provided this is well defined, this is a nonzero homomorphism of $\mathcal H(G)$-modules, so irreducibility of $V_1,V_2$ implies this is an isomorphism $V_1 \cong V_2$.
 
-    To check this is well defined, it suffices to show that if $\pi_1(f)\phi =0$ then $\pi_2(f)I(\phi)=0$. We exploit the $\mathcal H(G,K)$-intertwining of $I$ (for the second implication below). For all $f_1 \in \mathcal H(G)$ we have:
+    We now check that this is well defined. Suppose $\pi_1(f_1)\phi_1 = \pi_1(f_2)\phi_2$. Since $V_1^K$ is irreducible, there exists $f_3 \in \mathcal H(G,K)$ such that $\pi_1(f_3)\phi_1 = \phi_2$, and so also $\pi_2(f_3)I(\phi_1) = I(\phi_2)$ since $I$ is $\mathcal H(G,K)$-intertwining. Then $\pi_1(f_1) \phi_1 = \pi_1(f_2 * f_3) \phi_1$. Thus it suffices to show that if $\pi_1(f)\phi =0$ then $\pi_2(f)I(\phi)=0$. We exploit the $\mathcal H(G,K)$-intertwining of $I$ (for the second implication below). For all $f_1 \in \mathcal H(G)$ we have:
     $$\pi_1(f)\phi = 0 \Rightarrow \pi_1(e_K*f_1*f*e_K)\phi = 0 \Rightarrow \pi_2(e_K*f_1*f*e_K)I(\phi)=\pi_2(e_K*f_1*f)I(\phi)=0.$$
     By Lemma \ref{project}, $e_K$ acts on $V_2$ by projection to $V_2^K$. If $\pi_2(f)I(\phi) \neq 0$, then $\pi_2(f_1)\pi_2(f)I(\phi)$, over all $f_1 \in \mathcal H(G)$, generates $V_2$ by irreducibility. The image under $\pi_2(e_K)$ is the exactly $V^K$, which is nonzero, contradicting the implication above.
 \end{proof}
